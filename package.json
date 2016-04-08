@@ -1,0 +1,17 @@
+{
+  "name": "mangony",
+  "version": "0.0.1",
+  "description": "Static site generator in NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "generator",
+    "static",
+    "sites",
+    "static site generator"
+  ],
+  "author": "Sebastian Fitzner",
+  "license": "MIT"
+}
