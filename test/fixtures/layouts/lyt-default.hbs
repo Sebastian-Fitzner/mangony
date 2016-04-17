@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+
+{{> b-version}}
+
+<html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+	
+	{{#block "metadata"}}
+		{{> _metadata }}
+	{{/block}}
+	{{#block "styles"}}
+		{{> _styles }}
+	{{/block}}
+	
+</head>
+
+<body class="{{bodyclass}}">
+	
+	{{#block "main"}}
+		{{> body }}
+	{{/block}}
+	
+	<!-- Scripts
+	================================================== --> 
+	{{#block "scripts"}}
+		{{> _scripts }}
+	{{/block}}
+	
+</body>
+</html>

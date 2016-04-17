@@ -1,0 +1,26 @@
+---
+kVar: test
+---
+
+{{! ---
+general: k-tester
+============================================
+
+Requirements:
+- (only hbs)
+
+Options:
+- testerClasses {String} - Modifier classes
+
+Important Notes:
+
+--- }}
+
+
+<div class="k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}"
+     data-js-module="tester"
+     data-js-options='{
+     	{{#each testerJsOptions}}"{{optionsKey}}": {{#unless optionsObject}}"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+     }'>
+     
+</div>
