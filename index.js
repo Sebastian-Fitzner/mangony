@@ -15,5 +15,8 @@ var mangony = new Mangony({
 		layouts: [
 			'layouts/**/*.hbs'
 		]
-	}
+	},
+	helpers: [
+		'helpers/*.js'
+	]
 });
