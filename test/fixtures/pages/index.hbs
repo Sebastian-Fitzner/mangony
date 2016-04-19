@@ -4,9 +4,14 @@ menuLink: Home
 sortOrder: 01
 ---
 
-{{title}}
-{{config.title}}
-<h3>Place your content here!</h3>
+{{#extend "lyt-default"}}
+	{{#content "main"}}
+
+		{{title}}
+		{{config.title}}
+		<h3>Place your content here!</h3>
 
 
-{{> s-tester }}
+		{{> s-tester }}
+	{{/content}}
+{{/extend}}

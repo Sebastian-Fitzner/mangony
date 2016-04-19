@@ -6,16 +6,28 @@ sortOrder: 02
 
 {{title}}
 
-<h2>{{menuLink}}</h2>
+{{#extend "lyt-default"}}
+	{{#content "main"}}
 
-<h3>{{config.test}}</h3>
+		<h2>{{menuLink}}</h2>
 
-{{#each tester.data}}
-	<h4>{{name}}</h4>
-	<p>{{content}}</p>
-{{/each}}
+		<h3>{{config.test}}</h3>
 
-{{#with config}}
-	{{> k-tester}}
-{{/with}}
+		{{#each tester.data}}
+			<h4>{{name}}</h4>
+			<p>{{content}}</p>
+		{{/each}}
+
+		{{#with config}}
+			{{> k-tester}}
+		{{/with}}
+
+		{{! WrapWith START:  }}
+		{{#times 5}}
+			test {{random}}
+		{{/times}}
+		{{! WrapWith END:  }}
+
+	{{/content}}
+{{/extend}}
 
