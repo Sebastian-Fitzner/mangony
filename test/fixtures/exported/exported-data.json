@@ -8,19 +8,19 @@
       "page-components"
     ],
     "partials": [
-      "b-sitemap",
-      "_metadata",
-      "b-version",
-      "_styles",
       "_scripts",
-      "s-tester",
+      "b-sitemap",
+      "b-version",
       "k-tester",
-      "test"
+      "_styles",
+      "_metadata",
+      "test",
+      "s-tester"
     ],
     "panels": [],
     "data": [
-      "config",
       "mangony",
+      "config",
       "tester"
     ]
   },
@@ -64,6 +64,15 @@
     }
   },
   "partials": {
+    "_scripts": {
+      "file": "_scripts",
+      "raw": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n",
+      "parsed": {
+        "orig": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n",
+        "data": {},
+        "content": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n"
+      }
+    },
     "b-sitemap": {
       "file": "b-sitemap",
       "raw": "{{! ---\r\nblock: sitemap\r\n============================================\r\n\r\nImportant Notes:\r\nBe sure you use collections to categorize your sitemap.\r\nIf you do not want to use collections, just delete this `sitemap` partial\r\n--- }}\r\n\r\n<nav class=\"b-sitemap\">\r\n\t{{#each sitemap}}\r\n\t\t<div class=\"sitemap__overview\">\r\n\t\t\t<h3 class=\"sitemap__headline\">{{sitemap}}</h3>\r\n\t\t\t<ol class=\"sitemap__list\">\r\n\t\t\t\t{{#withSort ../pages \"data.sortOrder\"}}\r\n\t\t\t\t\t{{#is data.sitemap ../sitemap}}\r\n\t\t\t\t\t\t<li class=\"sitemap__list-item\">\r\n\t\t\t\t\t\t\t<a href=\"{{autolink}}\" class=\"sitemap__list-item-link{{#is ../../page.dest ../this.dest}} is-active{{/is}}\">\r\n\t\t\t\t\t\t\t\t{{data.menuLink}}\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t{{/is}}\r\n\t\t\t\t{{/withSort}}\r\n\t\t\t</ol>\r\n\t\t</div>\r\n\t{{/each}}\r\n</nav>",
@@ -71,15 +80,6 @@
         "orig": "{{! ---\r\nblock: sitemap\r\n============================================\r\n\r\nImportant Notes:\r\nBe sure you use collections to categorize your sitemap.\r\nIf you do not want to use collections, just delete this `sitemap` partial\r\n--- }}\r\n\r\n<nav class=\"b-sitemap\">\r\n\t{{#each sitemap}}\r\n\t\t<div class=\"sitemap__overview\">\r\n\t\t\t<h3 class=\"sitemap__headline\">{{sitemap}}</h3>\r\n\t\t\t<ol class=\"sitemap__list\">\r\n\t\t\t\t{{#withSort ../pages \"data.sortOrder\"}}\r\n\t\t\t\t\t{{#is data.sitemap ../sitemap}}\r\n\t\t\t\t\t\t<li class=\"sitemap__list-item\">\r\n\t\t\t\t\t\t\t<a href=\"{{autolink}}\" class=\"sitemap__list-item-link{{#is ../../page.dest ../this.dest}} is-active{{/is}}\">\r\n\t\t\t\t\t\t\t\t{{data.menuLink}}\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t{{/is}}\r\n\t\t\t\t{{/withSort}}\r\n\t\t\t</ol>\r\n\t\t</div>\r\n\t{{/each}}\r\n</nav>",
         "data": {},
         "content": "{{! ---\r\nblock: sitemap\r\n============================================\r\n\r\nImportant Notes:\r\nBe sure you use collections to categorize your sitemap.\r\nIf you do not want to use collections, just delete this `sitemap` partial\r\n--- }}\r\n\r\n<nav class=\"b-sitemap\">\r\n\t{{#each sitemap}}\r\n\t\t<div class=\"sitemap__overview\">\r\n\t\t\t<h3 class=\"sitemap__headline\">{{sitemap}}</h3>\r\n\t\t\t<ol class=\"sitemap__list\">\r\n\t\t\t\t{{#withSort ../pages \"data.sortOrder\"}}\r\n\t\t\t\t\t{{#is data.sitemap ../sitemap}}\r\n\t\t\t\t\t\t<li class=\"sitemap__list-item\">\r\n\t\t\t\t\t\t\t<a href=\"{{autolink}}\" class=\"sitemap__list-item-link{{#is ../../page.dest ../this.dest}} is-active{{/is}}\">\r\n\t\t\t\t\t\t\t\t{{data.menuLink}}\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t{{/is}}\r\n\t\t\t\t{{/withSort}}\r\n\t\t\t</ol>\r\n\t\t</div>\r\n\t{{/each}}\r\n</nav>"
-      }
-    },
-    "_metadata": {
-      "file": "_metadata",
-      "raw": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">",
-      "parsed": {
-        "orig": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">",
-        "data": {},
-        "content": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">"
       }
     },
     "b-version": {
@@ -93,6 +93,17 @@
         "content": "\r\n<!--\r\n===================== version=\"0.0.1\" =====================\r\n-->"
       }
     },
+    "k-tester": {
+      "file": "k-tester",
+      "raw": "---\r\nkVar: test\r\n---\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n",
+      "parsed": {
+        "orig": "---\r\nkVar: test\r\n---\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n",
+        "data": {
+          "kVar": "test"
+        },
+        "content": "\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n"
+      }
+    },
     "_styles": {
       "file": "_styles",
       "raw": "<link rel=\"stylesheet\" href=\"{{assets}}/css/styles.css\"/>\r\n",
@@ -102,13 +113,22 @@
         "content": "<link rel=\"stylesheet\" href=\"{{assets}}/css/styles.css\"/>\r\n"
       }
     },
-    "_scripts": {
-      "file": "_scripts",
-      "raw": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n",
+    "_metadata": {
+      "file": "_metadata",
+      "raw": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">",
       "parsed": {
-        "orig": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n",
+        "orig": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">",
         "data": {},
-        "content": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n"
+        "content": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">"
+      }
+    },
+    "test": {
+      "file": "test",
+      "raw": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>",
+      "parsed": {
+        "orig": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>",
+        "data": {},
+        "content": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>"
       }
     },
     "s-tester": {
@@ -121,36 +141,16 @@
         },
         "content": "\r\n{{! ---\r\ngeneral: s-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"s-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, alias blanditiis consectetur consequatur corporis culpa dolorem earum eos laudantium nobis nostrum officia officiis optio praesentium, quaerat quasi ullam vitae voluptatibus.\r\n</div>\r\n"
       }
-    },
-    "k-tester": {
-      "file": "k-tester",
-      "raw": "---\r\nkVar: test\r\n---\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n",
-      "parsed": {
-        "orig": "---\r\nkVar: test\r\n---\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n",
-        "data": {
-          "kVar": "test"
-        },
-        "content": "\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n"
-      }
-    },
-    "test": {
-      "file": "test",
-      "raw": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>",
-      "parsed": {
-        "orig": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>",
-        "data": {},
-        "content": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>"
-      }
     }
   },
   "data": {
-    "config": {
-      "title": "v6-7-0",
-      "test": "trolo"
-    },
     "mangony": {
       "title": "v6-7-0",
       "test": "Mangony test data in HJSON"
+    },
+    "config": {
+      "title": "v6-7-0",
+      "test": "trolo"
     },
     "tester": {
       "data": [
