@@ -22,14 +22,15 @@ sortOrder: 02
 		{{! WrapWith START:  }}
 		{{#times 5}}
 			test {{random}}
-
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci deleniti distinctio doloremque nesciunt non provident quaerat sit tenetur ullam. Aliquam aliquid at consequuntur, cumque distinctio expedita nam pariatur quas.
-
-
 		{{/times}}
 		{{! WrapWith END:  }}
 
+		{{#is mangony.test "Mangony test data in HJSON"}}
+			lolotrolo
+		{{/is}}
 		{{mangony.test}}
+
+		{{markdown "test/fixtures/data/text.md"}}
 
 	{{/content}}
 {{/extend}}

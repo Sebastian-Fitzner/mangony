@@ -6,19 +6,22 @@ var mangony = new Mangony({
 		data: {
 			dir: 'data',
 			files: [
-				'/**/*'
+				'/**/*.json',
+				'/**/*.hjson'
 			]
 		},
 		partials: {
-			dir: 'partials',
+			dir: '',
 			files: [
-				'/**/*.hbs'
+				'partials/**/*.hbs',
+				'data/**/*.md'
 			]
 		},
 		pages: {
 			dir: 'pages',
 			files: [
-				'/**/*.hbs'
+				'/**/*.hbs',
+				'/**/*.md'
 			]
 		},
 		layouts: {

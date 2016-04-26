@@ -5,23 +5,25 @@
     ],
     "pages": [
       "index",
+      "page-markdown",
       "page-components"
     ],
     "partials": [
-      "_scripts",
+      "_metadata",
       "b-sitemap",
       "b-version",
-      "k-tester",
+      "_scripts",
       "_styles",
-      "_metadata",
+      "k-tester",
+      "s-tester",
       "test",
-      "s-tester"
+      "text"
     ],
     "panels": [],
     "data": [
-      "mangony",
       "config",
-      "tester"
+      "tester",
+      "mangony"
     ]
   },
   "layouts": {
@@ -49,28 +51,37 @@
         "content": "\r\n\r\n{{#extend \"lyt-default\"}}\r\n\t{{#content \"main\"}}\r\n\r\n\t\t{{title}}\r\n\t\t{{config.title}}\r\n\t\t<h3>Place your content here!</h3>\r\n\r\n\r\n\t\t{{> s-tester }}\r\n\t{{/content}}\r\n{{/extend}}\r\n"
       }
     },
+    "page-markdown": {
+      "file": "page-markdown",
+      "raw": "{{#extend \"lyt-default\"}}\r\n    {{#content \"main\"}}\r\n        \r\n# body h1 \r\n\r\n## headline 2\r\n\r\n### headline 3 \r\n\r\n\r\nFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.\r\n\r\n{{> k-tester }}\r\n{{> s-tester }}\r\n\r\n    {{/content}}\r\n{{/extend}}\r\n\r\n",
+      "parsed": {
+        "orig": "{{#extend \"lyt-default\"}}\r\n    {{#content \"main\"}}\r\n        \r\n# body h1 \r\n\r\n## headline 2\r\n\r\n### headline 3 \r\n\r\n\r\nFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.\r\n\r\n{{> k-tester }}\r\n{{> s-tester }}\r\n\r\n    {{/content}}\r\n{{/extend}}\r\n\r\n",
+        "data": {},
+        "content": "{{#extend \"lyt-default\"}}\r\n    {{#content \"main\"}}\r\n        \r\n# body h1 \r\n\r\n## headline 2\r\n\r\n### headline 3 \r\n\r\n\r\nFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.\r\n\r\n{{> k-tester }}\r\n{{> s-tester }}\r\n\r\n    {{/content}}\r\n{{/extend}}\r\n\r\n"
+      }
+    },
     "page-components": {
       "file": "page-components",
-      "raw": "---\r\ntitle: Build Better Prototypes with Veams\r\nmenuLink: Components\r\nsortOrder: 02\r\n---\r\n{{#extend \"lyt-default\"}}\r\n\t{{#content \"main\"}}\r\n\r\n\t\t<h2>{{menuLink}}</h2>\r\n\r\n\t\t<h3>{{config.test}}</h3>\r\n\r\n\t\t{{#each tester.data}}\r\n\t\t\t<h4>{{name}}</h4>\r\n\t\t\t<p>{{content}}</p>\r\n\t\t{{/each}}\r\n\r\n\t\t{{#with config}}\r\n\t\t\t{{> k-tester}}\r\n\t\t{{/with}}\r\n\r\n\t\t{{! WrapWith START:  }}\r\n\t\t{{#times 5}}\r\n\t\t\ttest {{random}}\r\n\r\n\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci deleniti distinctio doloremque nesciunt non provident quaerat sit tenetur ullam. Aliquam aliquid at consequuntur, cumque distinctio expedita nam pariatur quas.\r\n\r\n\r\n\t\t{{/times}}\r\n\t\t{{! WrapWith END:  }}\r\n\r\n\t\t{{mangony.test}}\r\n\r\n\t{{/content}}\r\n{{/extend}}\r\n\r\n",
+      "raw": "---\r\ntitle: Build Better Prototypes with Veams\r\nmenuLink: Components\r\nsortOrder: 02\r\n---\r\n{{#extend \"lyt-default\"}}\r\n\t{{#content \"main\"}}\r\n\r\n\t\t<h2>{{menuLink}}</h2>\r\n\r\n\t\t<h3>{{config.test}}</h3>\r\n\r\n\t\t{{#each tester.data}}\r\n\t\t\t<h4>{{name}}</h4>\r\n\t\t\t<p>{{content}}</p>\r\n\t\t{{/each}}\r\n\r\n\t\t{{#with config}}\r\n\t\t\t{{> k-tester}}\r\n\t\t{{/with}}\r\n\r\n\t\t{{! WrapWith START:  }}\r\n\t\t{{#times 5}}\r\n\t\t\ttest {{random}}\r\n\t\t{{/times}}\r\n\t\t{{! WrapWith END:  }}\r\n\r\n\t\t{{#is mangony.test \"Mangony test data in HJSON\"}}\r\n\t\t\tlolotrolo\r\n\t\t{{/is}}\r\n\t\t{{mangony.test}}\r\n\r\n\t\t{{markdown \"test/fixtures/data/text.md\"}}\r\n\r\n\t{{/content}}\r\n{{/extend}}\r\n\r\n",
       "parsed": {
-        "orig": "---\r\ntitle: Build Better Prototypes with Veams\r\nmenuLink: Components\r\nsortOrder: 02\r\n---\r\n{{#extend \"lyt-default\"}}\r\n\t{{#content \"main\"}}\r\n\r\n\t\t<h2>{{menuLink}}</h2>\r\n\r\n\t\t<h3>{{config.test}}</h3>\r\n\r\n\t\t{{#each tester.data}}\r\n\t\t\t<h4>{{name}}</h4>\r\n\t\t\t<p>{{content}}</p>\r\n\t\t{{/each}}\r\n\r\n\t\t{{#with config}}\r\n\t\t\t{{> k-tester}}\r\n\t\t{{/with}}\r\n\r\n\t\t{{! WrapWith START:  }}\r\n\t\t{{#times 5}}\r\n\t\t\ttest {{random}}\r\n\r\n\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci deleniti distinctio doloremque nesciunt non provident quaerat sit tenetur ullam. Aliquam aliquid at consequuntur, cumque distinctio expedita nam pariatur quas.\r\n\r\n\r\n\t\t{{/times}}\r\n\t\t{{! WrapWith END:  }}\r\n\r\n\t\t{{mangony.test}}\r\n\r\n\t{{/content}}\r\n{{/extend}}\r\n\r\n",
+        "orig": "---\r\ntitle: Build Better Prototypes with Veams\r\nmenuLink: Components\r\nsortOrder: 02\r\n---\r\n{{#extend \"lyt-default\"}}\r\n\t{{#content \"main\"}}\r\n\r\n\t\t<h2>{{menuLink}}</h2>\r\n\r\n\t\t<h3>{{config.test}}</h3>\r\n\r\n\t\t{{#each tester.data}}\r\n\t\t\t<h4>{{name}}</h4>\r\n\t\t\t<p>{{content}}</p>\r\n\t\t{{/each}}\r\n\r\n\t\t{{#with config}}\r\n\t\t\t{{> k-tester}}\r\n\t\t{{/with}}\r\n\r\n\t\t{{! WrapWith START:  }}\r\n\t\t{{#times 5}}\r\n\t\t\ttest {{random}}\r\n\t\t{{/times}}\r\n\t\t{{! WrapWith END:  }}\r\n\r\n\t\t{{#is mangony.test \"Mangony test data in HJSON\"}}\r\n\t\t\tlolotrolo\r\n\t\t{{/is}}\r\n\t\t{{mangony.test}}\r\n\r\n\t\t{{markdown \"test/fixtures/data/text.md\"}}\r\n\r\n\t{{/content}}\r\n{{/extend}}\r\n\r\n",
         "data": {
           "title": "Build Better Prototypes with Veams",
           "menuLink": "Components",
           "sortOrder": 2
         },
-        "content": "\r\n{{#extend \"lyt-default\"}}\r\n\t{{#content \"main\"}}\r\n\r\n\t\t<h2>{{menuLink}}</h2>\r\n\r\n\t\t<h3>{{config.test}}</h3>\r\n\r\n\t\t{{#each tester.data}}\r\n\t\t\t<h4>{{name}}</h4>\r\n\t\t\t<p>{{content}}</p>\r\n\t\t{{/each}}\r\n\r\n\t\t{{#with config}}\r\n\t\t\t{{> k-tester}}\r\n\t\t{{/with}}\r\n\r\n\t\t{{! WrapWith START:  }}\r\n\t\t{{#times 5}}\r\n\t\t\ttest {{random}}\r\n\r\n\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci deleniti distinctio doloremque nesciunt non provident quaerat sit tenetur ullam. Aliquam aliquid at consequuntur, cumque distinctio expedita nam pariatur quas.\r\n\r\n\r\n\t\t{{/times}}\r\n\t\t{{! WrapWith END:  }}\r\n\r\n\t\t{{mangony.test}}\r\n\r\n\t{{/content}}\r\n{{/extend}}\r\n\r\n"
+        "content": "\r\n{{#extend \"lyt-default\"}}\r\n\t{{#content \"main\"}}\r\n\r\n\t\t<h2>{{menuLink}}</h2>\r\n\r\n\t\t<h3>{{config.test}}</h3>\r\n\r\n\t\t{{#each tester.data}}\r\n\t\t\t<h4>{{name}}</h4>\r\n\t\t\t<p>{{content}}</p>\r\n\t\t{{/each}}\r\n\r\n\t\t{{#with config}}\r\n\t\t\t{{> k-tester}}\r\n\t\t{{/with}}\r\n\r\n\t\t{{! WrapWith START:  }}\r\n\t\t{{#times 5}}\r\n\t\t\ttest {{random}}\r\n\t\t{{/times}}\r\n\t\t{{! WrapWith END:  }}\r\n\r\n\t\t{{#is mangony.test \"Mangony test data in HJSON\"}}\r\n\t\t\tlolotrolo\r\n\t\t{{/is}}\r\n\t\t{{mangony.test}}\r\n\r\n\t\t{{markdown \"test/fixtures/data/text.md\"}}\r\n\r\n\t{{/content}}\r\n{{/extend}}\r\n\r\n"
       }
     }
   },
   "partials": {
-    "_scripts": {
-      "file": "_scripts",
-      "raw": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n",
+    "_metadata": {
+      "file": "_metadata",
+      "raw": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">",
       "parsed": {
-        "orig": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n",
+        "orig": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">",
         "data": {},
-        "content": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n"
+        "content": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">"
       }
     },
     "b-sitemap": {
@@ -93,15 +104,13 @@
         "content": "\r\n<!--\r\n===================== version=\"0.0.1\" =====================\r\n-->"
       }
     },
-    "k-tester": {
-      "file": "k-tester",
-      "raw": "---\r\nkVar: test\r\n---\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n",
+    "_scripts": {
+      "file": "_scripts",
+      "raw": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n",
       "parsed": {
-        "orig": "---\r\nkVar: test\r\n---\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n",
-        "data": {
-          "kVar": "test"
-        },
-        "content": "\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n"
+        "orig": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n",
+        "data": {},
+        "content": "\r\n<script src=\"js/vendor/libs.js\"></script>\r\n<script src=\"js/main.js\"></script>\r\n\r\n\r\n"
       }
     },
     "_styles": {
@@ -113,22 +122,15 @@
         "content": "<link rel=\"stylesheet\" href=\"{{assets}}/css/styles.css\"/>\r\n"
       }
     },
-    "_metadata": {
-      "file": "_metadata",
-      "raw": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">",
+    "k-tester": {
+      "file": "k-tester",
+      "raw": "---\r\nkVar: test\r\n---\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n",
       "parsed": {
-        "orig": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">",
-        "data": {},
-        "content": "<meta charset=\"utf-8\"/>\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=IE7\"/>\r\n<meta name=\"viewport\" content=\"width=device-width\"/>\r\n<title>{{title}} | {{config.title}}</title>\r\n<link rel=\"shortcut icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">\r\n<link rel=\"icon\" href=\"{{assets}}/img/favicon.ico\" type=\"image/x-icon\">"
-      }
-    },
-    "test": {
-      "file": "test",
-      "raw": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>",
-      "parsed": {
-        "orig": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>",
-        "data": {},
-        "content": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>"
+        "orig": "---\r\nkVar: test\r\n---\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n",
+        "data": {
+          "kVar": "test"
+        },
+        "content": "\r\n\r\n{{! ---\r\ngeneral: k-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"k-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n\tmy k-tester\r\n\t{{test}}\r\n\t{{@root.title}}\r\n</div>\r\n"
       }
     },
     "s-tester": {
@@ -141,13 +143,27 @@
         },
         "content": "\r\n{{! ---\r\ngeneral: s-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n\r\n\r\n<div class=\"s-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options='{\r\n     \t{{#each testerJsOptions}}\"{{optionsKey}}\": {{#unless optionsObject}}\"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}\"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}\r\n     }'>\r\n     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, alias blanditiis consectetur consequatur corporis culpa dolorem earum eos laudantium nobis nostrum officia officiis optio praesentium, quaerat quasi ullam vitae voluptatibus.\r\n</div>\r\n"
       }
+    },
+    "test": {
+      "file": "test",
+      "raw": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>",
+      "parsed": {
+        "orig": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>",
+        "data": {},
+        "content": "<div class=\"test\">\r\n\t{{{yield}}}\r\n</div>"
+      }
+    },
+    "text": {
+      "file": "text",
+      "raw": "# My markdown file\r\n\r\nFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. \r\n",
+      "parsed": {
+        "orig": "# My markdown file\r\n\r\nFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. \r\n",
+        "data": {},
+        "content": "# My markdown file\r\n\r\nFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. \r\n"
+      }
     }
   },
   "data": {
-    "mangony": {
-      "title": "v6-7-0",
-      "test": "Mangony test data in HJSON"
-    },
     "config": {
       "title": "v6-7-0",
       "test": "trolo"
@@ -163,6 +179,10 @@
           "content": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane."
         }
       ]
+    },
+    "mangony": {
+      "title": "v6-7-0",
+      "test": "Mangony test data in HJSON"
     }
   },
   "customTypes": []
