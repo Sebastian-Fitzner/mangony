@@ -2,6 +2,7 @@ var Mangony = require('./index');
 
 var mangony = new Mangony({
 	cwd: 'test/fixtures/',
+	dest: 'test/expected',
 	types: {
 		data: {
 			dir: 'data',

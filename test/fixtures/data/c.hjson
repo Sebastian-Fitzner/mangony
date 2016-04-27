@@ -1,0 +1,4 @@
+// My custom JSON
+{
+	"c": "c" // With comments
+}

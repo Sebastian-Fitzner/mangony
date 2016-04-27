@@ -4,34 +4,6 @@ menuLink: Components
 sortOrder: 02
 ---
 {{#extend "lyt-default"}}
-	{{#content "main"}}
-
-		<h2>{{menuLink}}</h2>
-
-		<h3>{{config.test}}</h3>
-
-		{{#each tester.data}}
-			<h4>{{name}}</h4>
-			<p>{{content}}</p>
-		{{/each}}
-
-		{{#with config}}
-			{{> k-tester}}
-		{{/with}}
-
-		{{! WrapWith START:  }}
-		{{#times 5}}
-			test {{random}}
-		{{/times}}
-		{{! WrapWith END:  }}
-
-		{{#is mangony.test "Mangony test data in HJSON"}}
-			lolotrolo
-		{{/is}}
-		{{mangony.test}}
-
-		{{markdown "test/fixtures/data/text.md"}}
-
-	{{/content}}
+	{{#content "main"}}{{/content}}
 {{/extend}}
 
