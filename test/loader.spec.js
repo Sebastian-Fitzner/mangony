@@ -2,13 +2,10 @@
 
 require('mocha');
 var chai = require("chai");
-var chaiAsPromised = require("chai-as-promised");
 var expect = chai.expect;
 var Mangony = require('../index');
 var options = require('./support/options-factory')();
 var app;
-
-chai.use(chaiAsPromised);
 
 describe('mangony.loader', function () {
 	beforeEach(function () {
@@ -18,22 +15,22 @@ describe('mangony.loader', function () {
 	describe('getFiles()', function () {
 		it('should load a single file and return the file as promise', function () {
 			app.loader.getFiles('test/fixtures/data/a.json').then((result) => {
-				expect(result).to.have.lengthOf(1);
 				expect(result).to.be.an('array');
+				expect(result).to.have.lengthOf(1);
 			});
 		});
 
 		it('should load all files in directory (globbing)', function () {
 			app.loader.getFiles(['test/fixtures/data/**/*']).then((result) => {
-				expect(result).to.have.lengthOf(4);
 				expect(result).to.be.an('array');
+				expect(result).to.have.lengthOf(4);
 			});
 		});
 
 		it('should load a all files in directory (globbing) and single file', function () {
 			app.loader.getFiles(['test/fixtures/data/*', 'test/fixtures/data/deep-data/d.hjson']).then((result) => {
-				expect(result).to.have.lengthOf(4);
 				expect(result).to.be.an('array');
+				expect(result).to.have.lengthOf(4);
 			});
 		});
 	});
