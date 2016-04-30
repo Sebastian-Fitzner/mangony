@@ -1,7 +1,8 @@
 module.exports = function optionsFactory(customOptions) {
 	var defaults = {
 		cwd: 'fixtures/',
-		dest: 'expected',
+		dest: 'test/expected',
+		ext: '.html',
 		types: {
 			data: {
 				dir: 'data',
