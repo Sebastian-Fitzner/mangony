@@ -1,7 +1,10 @@
 module.exports = function optionsFactory(customOptions) {
 	var defaults = {
+		exportData: true,
 		cwd: 'fixtures/',
 		dest: 'test/expected',
+		flatten: false,
+		watch: false,
 		ext: '.html',
 		types: {
 			data: {
@@ -34,8 +37,7 @@ module.exports = function optionsFactory(customOptions) {
 		},
 		helpers: [
 			'helpers/*.js'
-		],
-		watch: false
+		]
 	};
 
 	var custom = defaults;
