@@ -91,5 +91,65 @@ describe('mangony.templater', function () {
 				expect(content).to.equal('c');
 			});
 		});
+
+		it('should render a multiple pages', function () {
+			let data = {
+				"repository": {
+					"pages": [
+						"a",
+						"b",
+						"c"
+					]
+				},
+				"pages": {
+					"a": {
+						"ext": ".hbs",
+						"file": "a",
+						"parsed": {
+							"data": {
+								"title": "Build websites with Mangony"
+							},
+							"content": "a"
+						}
+					},
+					"b": {
+						"ext": ".hbs",
+						"file": "b",
+						"parsed": {
+							"data": {},
+							"content": "{{globalTitle}}"
+						}
+					},
+					"c": {
+						"ext": ".hbs",
+						"file": "c",
+						"parsed": {
+							"data": {
+								"title": "c"
+							},
+							"content": "{{title}}"
+						}
+					}
+				}
+			};
+
+			return app.templater.renderAll({
+				repository: data.repository.pages,
+				pages: data.pages,
+				cache: {
+					data: {
+						globalTitle: "Global Title"
+					}
+				}
+			}).then(() => {
+				let contentA = fsx.readFileSync(app.options.dest + '/' + 'a' + app.options.ext, 'utf8');
+				let contentB = fsx.readFileSync(app.options.dest + '/' + 'b' + app.options.ext, 'utf8');
+				let contentC = fsx.readFileSync(app.options.dest + '/' + 'c' + app.options.ext, 'utf8');
+
+				expect(contentA).to.equal('a');
+				expect(contentB).to.equal('Global Title');
+				expect(contentC).to.equal('c');
+			});
+		});
 	});
 });
