@@ -27,7 +27,7 @@ describe('mangony.templater', function () {
 		it('should render a simple page with html content', function () {
 			let pageFileData = {
 				"ext": ".hbs",
-				"file": "a",
+				"filename": "a",
 				"parsed": {
 					"data": {
 						"title": "Build Better Prototypes with Veams"
@@ -39,7 +39,7 @@ describe('mangony.templater', function () {
 			return app.templater.renderOne({
 				page: pageFileData
 			}).then(() => {
-				let content = fsx.readFileSync(app.options.dest + '/' + pageFileData.file + app.options.ext, 'utf8');
+				let content = fsx.readFileSync(app.options.dest + '/' + pageFileData.filename + app.options.ext, 'utf8');
 
 				expect(content).to.equal('a');
 			});
@@ -48,7 +48,7 @@ describe('mangony.templater', function () {
 		it('should render a simple page with global data', function () {
 			let pageFileData = {
 				"ext": ".hbs",
-				"file": "b",
+				"filename": "b",
 				"parsed": {
 					"data": {
 						"title": "Build Better Prototypes with Veams"
@@ -65,7 +65,7 @@ describe('mangony.templater', function () {
 					}
 				}
 			}).then(() => {
-				let content = fsx.readFileSync(app.options.dest + '/' + pageFileData.file + app.options.ext, 'utf8');
+				let content = fsx.readFileSync(app.options.dest + '/' + pageFileData.filename + app.options.ext, 'utf8');
 
 				expect(content).to.equal('b');
 			});
@@ -74,7 +74,7 @@ describe('mangony.templater', function () {
 		it('should render a simple page with local data', function () {
 			let pageFileData = {
 				"ext": ".hbs",
-				"file": "c",
+				"filename": "c",
 				"parsed": {
 					"data": {
 						"title": "c"
@@ -86,7 +86,7 @@ describe('mangony.templater', function () {
 			return app.templater.renderOne({
 				page: pageFileData
 			}).then(() => {
-				let content = fsx.readFileSync(app.options.dest + '/' + pageFileData.file + app.options.ext, 'utf8');
+				let content = fsx.readFileSync(app.options.dest + '/' + pageFileData.filename + app.options.ext, 'utf8');
 
 				expect(content).to.equal('c');
 			});
@@ -104,7 +104,7 @@ describe('mangony.templater', function () {
 				"pages": {
 					"a": {
 						"ext": ".hbs",
-						"file": "a",
+						"filename": "a",
 						"parsed": {
 							"data": {
 								"title": "Build websites with Mangony"
@@ -114,7 +114,7 @@ describe('mangony.templater', function () {
 					},
 					"b": {
 						"ext": ".hbs",
-						"file": "b",
+						"filename": "b",
 						"parsed": {
 							"data": {},
 							"content": "{{globalTitle}}"
@@ -122,7 +122,7 @@ describe('mangony.templater', function () {
 					},
 					"c": {
 						"ext": ".hbs",
-						"file": "c",
+						"filename": "c",
 						"parsed": {
 							"data": {
 								"title": "c"
