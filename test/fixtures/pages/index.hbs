@@ -6,6 +6,13 @@ sortOrder: 01
 
 {{#extend "lyt-default"}}
 	{{#content "main"}}
+		{{#with this.deep-data_d}}
+			{{d}}
+		{{/with}}
+
+		{{#with a}}
+			{{a}}
+		{{/with}}
 		{{> test-partial }}
 	{{/content}}
 {{/extend}}

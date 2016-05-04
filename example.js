@@ -35,7 +35,8 @@ var mangony = new Mangony({
 	helpers: [
 		'helpers/*.js'
 	],
-	watch: true
+	watch: true,
+	flatten: false
 });
 
 mangony.compile();
