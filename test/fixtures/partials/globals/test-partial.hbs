@@ -1,5 +1,5 @@
 ---
-testPartial: my custom string
+testPartial: test partial
 ---
 {{! ---
 general: s-tester
@@ -14,11 +14,8 @@ Options:
 Important Notes:
 
 --- }}
-
-
 <div class="s-tester{{#if testerClasses}} {{testerClasses}}{{/if}}"
      data-js-module="tester"
-     data-js-options='{
-     	{{#each testerJsOptions}}"{{optionsKey}}": {{#unless optionsObject}}"{{/unless}}{{{optionsValue}}}{{#unless optionsObject}}"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}
-     }'>
-     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+     data-js-options="{ &quot;test&quot;:  &quot;testing&quot;}">
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>

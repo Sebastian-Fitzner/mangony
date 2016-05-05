@@ -37,35 +37,23 @@ describe('mangony.loader', function () {
 
 	describe('readFile()', function () {
 		it('should read and parse a single json/hjson file', function () {
-			app.loader.readFile({
-				srcPath: 'test/fixtures/data/deep-data/d.hjson'
-			}).then((result) => {
+			app.loader.readFile('test/fixtures/data/deep-data/d.hjson').then((result) => {
 				expect(result).to.be.an('object');
-				expect(result.ext).is.equal('.hjson');
-				expect(result.filename).is.equal('d');
-				expect(result.parsed.d).is.equal('d');
+				expect(result.parsedData.d).is.equal('d');
 			});
 		});
 
 		it('should read and parse a single page file', function () {
-			app.loader.readFile({
-				srcPath: 'test/fixtures/pages/index.hbs'
-			}).then((result) => {
+			app.loader.readFile('test/fixtures/pages/index.hbs').then((result) => {
 				expect(result).to.be.an('object');
-				expect(result.ext).is.equal('.hbs');
-				expect(result.filename).is.equal('index');
-				expect(result.parsed.data.title).is.equal('Index Title');
+				expect(result.parsedData.data.title).is.equal('Index Title');
 			});
 		});
 
 		it('should read and parse a single partial file', function () {
-			app.loader.readFile({
-				srcPath: 'test/fixtures/partials/globals/test-partial.hbs'
-			}).then((result) => {
+			app.loader.readFile('test/fixtures/partials/globals/test-partial.hbs').then((result) => {
 				expect(result).to.be.an('object');
-				expect(result.ext).is.equal('.hbs');
-				expect(result.filename).is.equal('test-partial');
-				expect(result.parsed.data.testPartial).is.equal('my custom string');
+				expect(result.parsedData.data.testPartial).is.equal('test partial');
 			});
 		});
 	});
