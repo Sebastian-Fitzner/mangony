@@ -4,7 +4,7 @@
  * @author Sebastian Fitzner
  */
 
-var Marked = require('marked');
+var md = require('markdown-it');
 var fs = require('fs');
 
 (function() {
@@ -18,7 +18,7 @@ var fs = require('fs');
 		Handlebars.registerHelper('markdown', function(path) {
 			var content = fs.readFileSync(path, 'utf-8');
 
-			return new Handlebars.SafeString(Marked(content));
+			return new Handlebars.SafeString(md.render(content));
 		});
 	};
 }).call(this);
