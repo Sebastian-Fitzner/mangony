@@ -22,12 +22,19 @@ describe('mangony.templater', function () {
 		});
 	});
 
-
 	describe('rendering process', function () {
 		it('should render a simple page with html content', function () {
 			let pageFileData = {
-				"ext": ".hbs",
+				"id": "a",
+				"assets": "./",
+				"ext": ".html",
+				"srcExt": ".hbs",
+				"basename": "a.hbs",
 				"filename": "a",
+				"dirname": "test/fixtures/pages",
+				"destDir": "test/expected",
+				"destSubDir": "",
+				"destFile": "a.html",
 				"parsed": {
 					"data": {
 						"title": "Build Better Prototypes with Veams"
@@ -39,7 +46,7 @@ describe('mangony.templater', function () {
 			return app.templater.renderOne({
 				page: pageFileData
 			}).then(() => {
-				let content = fsx.readFileSync(app.options.dest + '/' + pageFileData.filename + app.options.ext, 'utf8');
+				let content = fsx.readFileSync(pageFileData.destDir + '/' + pageFileData.destFile, 'utf8');
 
 				expect(content).to.equal('a');
 			});
@@ -47,8 +54,16 @@ describe('mangony.templater', function () {
 
 		it('should render a simple page with global data', function () {
 			let pageFileData = {
-				"ext": ".hbs",
+				"id": "b",
+				"assets": "./",
+				"ext": ".html",
+				"srcExt": ".hbs",
+				"basename": "b.hbs",
 				"filename": "b",
+				"dirname": "test/fixtures/pages",
+				"destDir": "test/expected",
+				"destSubDir": "",
+				"destFile": "b.html",
 				"parsed": {
 					"data": {
 						"title": "Build Better Prototypes with Veams"
@@ -60,12 +75,10 @@ describe('mangony.templater', function () {
 			return app.templater.renderOne({
 				page: pageFileData,
 				cache: {
-					data: {
-						globalTitle: "b"
-					}
+					globalTitle: "b"
 				}
 			}).then(() => {
-				let content = fsx.readFileSync(app.options.dest + '/' + pageFileData.filename + app.options.ext, 'utf8');
+				let content = fsx.readFileSync(pageFileData.destDir + '/' + pageFileData.destFile, 'utf8');
 
 				expect(content).to.equal('b');
 			});
@@ -73,8 +86,16 @@ describe('mangony.templater', function () {
 
 		it('should render a simple page with local data', function () {
 			let pageFileData = {
-				"ext": ".hbs",
+				"id": "c",
+				"assets": "./",
+				"ext": ".html",
+				"srcExt": ".hbs",
+				"basename": "c.hbs",
 				"filename": "c",
+				"dirname": "test/fixtures/pages",
+				"destDir": "test/expected",
+				"destSubDir": "",
+				"destFile": "c.html",
 				"parsed": {
 					"data": {
 						"title": "c"
@@ -86,15 +107,44 @@ describe('mangony.templater', function () {
 			return app.templater.renderOne({
 				page: pageFileData
 			}).then(() => {
-				let content = fsx.readFileSync(app.options.dest + '/' + pageFileData.filename + app.options.ext, 'utf8');
+				let content = fsx.readFileSync(pageFileData.destDir + '/' + pageFileData.destFile, 'utf8');
 
 				expect(content).to.equal('c');
 			});
 		});
 
-		it('should render a multiple pages', function () {
+		it('should render a markdown page with local data and handlebars', function () {
+			let pageFileData = {
+				"id": "md",
+				"assets": "./",
+				"ext": ".html",
+				"srcExt": ".md",
+				"basename": "md.md",
+				"filename": "md",
+				"dirname": "test/fixtures/pages",
+				"destDir": "test/expected",
+				"destSubDir": "",
+				"destFile": "md.html",
+				"parsed": {
+					"data": {
+						"title": "md"
+					},
+					"content": "{{title}}"
+				}
+			};
+
+			return app.templater.renderOne({
+				page: pageFileData
+			}).then(() => {
+				let content = fsx.readFileSync(pageFileData.destDir + '/' + pageFileData.destFile, 'utf8');
+
+				expect(content).to.equal('<p>md</p>\n');
+			});
+		});
+
+		it('should render multiple pages', function () {
 			let data = {
-				"repository": {
+				"__repository": {
 					"pages": [
 						"a",
 						"b",
@@ -103,26 +153,52 @@ describe('mangony.templater', function () {
 				},
 				"pages": {
 					"a": {
-						"ext": ".hbs",
-						"filename": "a",
+						"id": "b",
+						"assets": "./",
+						"ext": ".html",
+						"srcExt": ".hbs",
+						"basename": "b.hbs",
+						"filename": "b",
+						"dirname": "test/fixtures/pages",
+						"destDir": "test/expected",
+						"destSubDir": "",
+						"destFile": "b.html",
 						"parsed": {
 							"data": {
-								"title": "Build websites with Mangony"
+								"title": "Build Better Prototypes with Veams"
 							},
-							"content": "a"
+							"content": "{{globalTitle}}"
 						}
 					},
 					"b": {
-						"ext": ".hbs",
+						"id": "b",
+						"assets": "./",
+						"ext": ".html",
+						"srcExt": ".hbs",
+						"basename": "b.hbs",
 						"filename": "b",
+						"dirname": "test/fixtures/pages",
+						"destDir": "test/expected",
+						"destSubDir": "",
+						"destFile": "b.html",
 						"parsed": {
-							"data": {},
+							"data": {
+								"title": "Build Better Prototypes with Veams"
+							},
 							"content": "{{globalTitle}}"
 						}
 					},
 					"c": {
-						"ext": ".hbs",
+						"id": "c",
+						"assets": "./",
+						"ext": ".html",
+						"srcExt": ".hbs",
+						"basename": "c.hbs",
 						"filename": "c",
+						"dirname": "test/fixtures/pages",
+						"destDir": "test/expected",
+						"destSubDir": "",
+						"destFile": "c.html",
 						"parsed": {
 							"data": {
 								"title": "c"
@@ -134,12 +210,10 @@ describe('mangony.templater', function () {
 			};
 
 			return app.templater.renderAll({
-				repository: data.repository.pages,
+				repository: data.__repository.pages,
 				pages: data.pages,
 				cache: {
-					data: {
-						globalTitle: "Global Title"
-					}
+					globalTitle: "Global Title"
 				}
 			}).then(() => {
 				let contentA = fsx.readFileSync(app.options.dest + '/' + 'a' + app.options.ext, 'utf8');

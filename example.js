@@ -39,4 +39,4 @@ var mangony = new Mangony({
 	flatten: false
 });
 
-mangony.compile();
+mangony.render();
