@@ -35,9 +35,11 @@ var mangony = new Mangony({
 		'helpers/*.js'
 	],
 	watch: true,
-	flatten: false,
+	flatten: true,
 	compileStaticFiles: false,
-	useDevServer: true
+	devServer: {
+		start: true
+	}
 });
 
 mangony.render();

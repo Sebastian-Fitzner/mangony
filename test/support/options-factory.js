@@ -1,12 +1,22 @@
 module.exports = function optionsFactory(customOptions) {
 	var defaults = {
-		exportData: true,
+		assets: '', // Assets directory
+		compileStaticFiles: true,
 		cwd: 'fixtures/',
+		debug: false,
 		dest: 'test/expected',
-		flatten: false,
-		watch: false,
-		ext: '.html',
-		types: {
+		devServer: {
+			start: false,
+			port: 3000,
+			express: false
+		},
+		exportData: true, // Export the complete data stack as JSON file
+		ext: '.html', // Extension of destination files
+		flatten: false, // Flatten the destination directory
+		helpers: [
+			'helpers/*.js'
+		], // Custom helpers files - globbing supported (example: 'helpers/*.js')
+		types: { // All standard types should be defined in here
 			data: {
 				dir: 'data',
 				files: [
@@ -35,9 +45,7 @@ module.exports = function optionsFactory(customOptions) {
 				]
 			}
 		},
-		helpers: [
-			'helpers/*.js'
-		]
+		watch: false
 	};
 
 	var custom = defaults;

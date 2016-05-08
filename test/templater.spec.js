@@ -32,7 +32,7 @@ describe('mangony.templater', function () {
 				"basename": "a.hbs",
 				"filename": "a",
 				"dirname": "test/fixtures/pages",
-				"destDir": "test/expected",
+				"destDir": "test/expected/",
 				"destSubDir": "",
 				"destFile": "a.html",
 				"parsed": {
@@ -61,7 +61,7 @@ describe('mangony.templater', function () {
 				"basename": "b.hbs",
 				"filename": "b",
 				"dirname": "test/fixtures/pages",
-				"destDir": "test/expected",
+				"destDir": "test/expected/",
 				"destSubDir": "",
 				"destFile": "b.html",
 				"parsed": {
@@ -93,7 +93,7 @@ describe('mangony.templater', function () {
 				"basename": "c.hbs",
 				"filename": "c",
 				"dirname": "test/fixtures/pages",
-				"destDir": "test/expected",
+				"destDir": "test/expected/",
 				"destSubDir": "",
 				"destFile": "c.html",
 				"parsed": {
@@ -122,7 +122,7 @@ describe('mangony.templater', function () {
 				"basename": "md.md",
 				"filename": "md",
 				"dirname": "test/fixtures/pages",
-				"destDir": "test/expected",
+				"destDir": "test/expected/",
 				"destSubDir": "",
 				"destFile": "md.html",
 				"parsed": {
@@ -160,7 +160,7 @@ describe('mangony.templater', function () {
 						"basename": "b.hbs",
 						"filename": "b",
 						"dirname": "test/fixtures/pages",
-						"destDir": "test/expected",
+						"destDir": "test/expected/",
 						"destSubDir": "",
 						"destFile": "b.html",
 						"parsed": {
@@ -178,7 +178,7 @@ describe('mangony.templater', function () {
 						"basename": "b.hbs",
 						"filename": "b",
 						"dirname": "test/fixtures/pages",
-						"destDir": "test/expected",
+						"destDir": "test/expected/",
 						"destSubDir": "",
 						"destFile": "b.html",
 						"parsed": {
@@ -196,7 +196,7 @@ describe('mangony.templater', function () {
 						"basename": "c.hbs",
 						"filename": "c",
 						"dirname": "test/fixtures/pages",
-						"destDir": "test/expected",
+						"destDir": "test/expected/",
 						"destSubDir": "",
 						"destFile": "c.html",
 						"parsed": {
