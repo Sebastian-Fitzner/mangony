@@ -7,27 +7,27 @@ var mangony = new Mangony({
 		data: {
 			dir: 'data',
 			files: [
-				'/**/*.json',
-				'/**/*.hjson'
+				'**/*.json',
+				'**/*.hjson'
 			]
 		},
 		partials: {
 			dir: 'partials',
 			files: [
-				'/**/*.hbs'
+				'**/*.hbs'
 			]
 		},
 		pages: {
 			dir: 'pages',
 			files: [
-				'/**/*.hbs',
-				'/**/*.md'
+				'**/*.hbs',
+				'**/*.md'
 			]
 		},
 		layouts: {
 			dir: 'layouts',
 			files: [
-				'/**/*.hbs'
+				'**/*.hbs'
 			]
 		}
 	},
@@ -42,4 +42,4 @@ var mangony = new Mangony({
 	}
 });
 
-mangony.render();
+mangony.render()

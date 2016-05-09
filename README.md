@@ -1,19 +1,22 @@
 # Mangony
 
-**Yet another static site generator - fast, simple and powerful.**
+**Yet another static site generator - fast, simple and powerful.** 
 
-_Think of Assemble (grunt-assemble) with a smooth mango juice - yummy._
+**Mangony fulfills just one task: It takes templates and compiles them to an output directory.** 
 
 ## Features
 
-1. **Mangony can be used in Grunt, Gulp or standalone as npm module.** 
-2. **By using the provided development server every change is completed in no time, no matter how many pages you have in your project.**
-3. **Only changed pages get compiled.** 
-4. **Creation of deep ids for all types is possible.** 
-5. **For every type (data, partials, layouts, pages) Mangony adds a watcher.**
-6. **HJSON is available.**
-7. **The newest handlebars version is integrated.**
-8. **Markdown pages with handlebars are supported.**
+_Think of Assemble ([grunt-assemble](https://github.com/assemble/grunt-assemble)) with a smooth mango juice - yummy._
+
+1. Mangony can be used in Grunt, Gulp or standalone as npm module. 
+2. By using the provided development server ([express](https://github.com/expressjs/express)) every change is completed in no time, no matter how many pages you have in your project.
+3. Only changed pages get compiled. 
+4. Creation of deep ids is possible for all types. 
+5. For every type (data, partials, layouts, pages) Mangony adds a watcher([chokidar](https://github.com/paulmillr/chokidar)).
+6. [HJSON](https://github.com/laktak/hjson) is available.
+7. [Handlebars](https://github.com/wycats/handlebars.js/) version 4.x is integrated.
+8. Markdown pages with handlebars are supported.
+9. [Markdown-it](https://github.com/markdown-it/markdown-it), [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) and [markdown-it-named-headers](https://github.com/leff/markdown-it-named-headers) are available.
 
 ## Installation
 
@@ -23,7 +26,7 @@ Install Mangony with
 npm install mangony --save-dev
 ```
 
-For the installation of the Grunt plugin, see grunt-mangony.
+For the installation of the Grunt plugin, see [grunt-mangony]().
 
 ## Usage
 
@@ -260,15 +263,15 @@ Just enable the internal watching of file changes.
 
 In general I love static site generators. Simply deploy the output and you`re done - great. 
 
-But there is one major problem. When developing every change leads to a compile of all pages. In large projects this is very time consuming.
+But there is one major problem. When developing every change leads to the compiling of all pages. In large projects this is very time consuming.
 
-That`s why I decided to combine a server for development purpose with a static site generator. 
+So why not just combine a server for development purpose with a static site generator? 
 
 **Assemble?**
 
 For 2 1/2 years I am working with Assemble. It is a great tool and I like it a lot. 
 
-The new assemble seems to be pretty nice, but it doesn`t fit so well in my current stack. Furthermore there is [a major bug](https://github.com/assemble/grunt-assemble/issues/22) in the latest grunt release. 
+The new [Assemble](https://github.com/assemble/assemble) (a full stack site generator) seems to be pretty nice, but it doesn`t fit so well in my current stack. Grunt-assemble however has [a major bug](https://github.com/assemble/grunt-assemble/issues/22), so it is not usable in the latest release. 
 
 **Last but not least**
 
@@ -276,7 +279,7 @@ I just wanted to develop a static site generator.
 
 ## Test
 
-Just execute `npm test`. 
+Just checkout the repository, install all dependencies with `npm install` and execute `npm test`. 
 
 ## Roadmap
 

@@ -1,5 +1,4 @@
 .idea
 test/expected
-node_modules
 server.js
 example.js
