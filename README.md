@@ -4,7 +4,7 @@
     <a href="http://badge.fury.io/js/mangony"><img src="https://badge.fury.io/js/mangony.svg" alt="NPM version" /></a>
 	<a href="https://travis-ci.org/Sebastian-Fitzner/mangony"><img src="https://travis-ci.org/Sebastian-Fitzner/mangony.svg" alt="Build Status" /></a>
 	<a href="https://nodei.co/npm/mangony/"><img src="https://nodei.co/npm/mangony.png?mini=true" alt="NPM install" /></a>
-	<a href="http://en.wikipedia.org/wiki/MIT_License"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license" /></a>
+	<a href="LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license" /></a>
 </p>
 
 **Yet another static site generator - fast, simple and powerful.** 
@@ -298,3 +298,7 @@ In the current release (<2.0.0) the following things are missing and will be int
 ### >=2.0.0
 
 When necessary an eco system for plugins will be integrated. 
+
+## License 
+
+see [LICENSE.md](LICENSE.md).
