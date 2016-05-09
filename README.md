@@ -225,6 +225,10 @@ There are 4 necessary types which needs to be defined:
 
 Each type has the following options: 
 
+### types[type].createDeepIds
+
+For every type you can create deep ids. The whole path to the file will be used. That makes it possible to have multiple identical named data, partial, layout and page files in different folders.
+
 ### types[type].dir
 
 - default: `"[type]"`
@@ -234,22 +238,17 @@ You can change the type directory to any folder you like.
 
 !Important: for every type directory Mangony creates a watcher if `options.watch` is `true`.
 
+### types[type].files
 
-### types[type].createDeepIds
+- default: `["**/*.[typeExtension]"]`
 
-For every type you can create deep ids. The whole path to the file will be used. That makes it possible to have multiple identical named data, partial, layout and page files in different folders.
+Pass an array of files to the files property. Globbing is possible.
 
 ### types[type].pathDelimiter
 
 - default: `"/"`
 
 By using deep ids the id is the path to your file. But using such ids in handlebars is not possible for your data files. That`s why you can define a path delimiter.
-
-### types[type].files
-
-- default: `["**/*.[typeExtension]"]`
-
-Pass an array of files to the files property. Globbing is possible.
 
 ### watch
 
