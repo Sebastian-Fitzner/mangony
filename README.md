@@ -1,5 +1,12 @@
 # Mangony
 
+<p align="center">
+    <a href="http://badge.fury.io/js/mangony"><img src="https://badge.fury.io/js/mangony.svg" alt="NPM version" /></a>
+	<a href="https://travis-ci.org/Sebastian-Fitzner/mangony"><img src="https://travis-ci.org/Sebastian-Fitzner/mangony.svg" alt="Build Status" /></a>
+	<a href="https://nodei.co/npm/mangony/"><img src="https://nodei.co/npm/mangony.png?mini=true" alt="NPM install" /></a>
+	<a href="http://en.wikipedia.org/wiki/MIT_License"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license" /></a>
+</p>
+
 **Yet another static site generator - fast, simple and powerful.** 
 
 **Mangony fulfills just one task: It takes templates and compiles them to an output directory.** 

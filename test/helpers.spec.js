@@ -41,16 +41,18 @@ describe('Helpers', function () {
 		expect(fileWithOutSlash).to.be.false;
 	});
 
-	it('should normalize the path', function () {
+	it('should normalize the path on windows', function () {
 		let data = 'test\\dummy\\test.hjson';
 		let file = Helpers.pathNormalize(data);
 
 		expect(file).to.be.a('string');
-		expect(file).to.equal('test/dummy/test.hjson');
+		if (process.platform === 'win32') {
+			expect(file).to.equal('test/dummy/test.hjson');
+		}
 	});
 
 	it('should prepare a path for id', function () {
-		let data = '\\test\\dummy\\test.hjson';
+		let data = '/test/dummy/test.hjson';
 		let file = Helpers.preparePathForId(data);
 
 		expect(file).to.be.a('string');
@@ -58,7 +60,7 @@ describe('Helpers', function () {
 	});
 
 	it('should get the destination directory', function () {
-		let data = '\\test\\dummy\\test.hjson';
+		let data = '/test/dummy/test.hjson';
 		let file = Helpers.getDestDir(data, '/test');
 
 		expect(file).to.be.a('string');
