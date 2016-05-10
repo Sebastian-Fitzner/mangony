@@ -7,9 +7,9 @@
 	<a href="LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license" /></a>
 </p>
 
-**Yet another static site generator - fast, simple and powerful.** 
+<p align="center"><strong>Yet another static site generator - fast, simple and powerful.</strong></p>
 
-**Mangony fulfills just one task: It takes templates and compiles them to an output directory.** 
+<p align="center">Mangony fulfills just one task: It takes templates and compiles them to an output directory.</p>
 
 ## Features
 
@@ -33,7 +33,7 @@ Install Mangony with
 npm install mangony --save-dev
 ```
 
-For the installation of the Grunt plugin, see [grunt-mangony]().
+For the installation of the Grunt plugin, see [grunt-mangony](https://github.com/Sebastian-Fitzner/grunt-mangony).
 
 ## Usage
 
