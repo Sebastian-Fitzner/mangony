@@ -265,7 +265,7 @@ Just enable the internal watching of file changes.
 
 ## Why Mangony?
 
-**Static site generator vs server**
+**Static site generator and server?**
 
 In general I love static site generators. Simply deploy the output and you`re done - great. 
 
