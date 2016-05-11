@@ -160,6 +160,12 @@ Now you can find the complete rendered output in the destination folder.
 
 Path to your assets in your destination directory. 
 
+### collections
+
+- default: `[]`
+
+Add your own collections which can be used in YAML front matter.
+
 ### compileStaticFiles
 
 - default: `true`
@@ -292,7 +298,6 @@ Just checkout the repository, install all dependencies with `npm install` and ex
 ### <2.0.0
 In the current release (<2.0.0) the following things are missing and will be integrated in the near future: 
 
-- Collections
 - YAML as data files
 
 ### >=2.0.0
