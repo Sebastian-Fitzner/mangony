@@ -279,6 +279,8 @@ But there is one major problem. When developing every change leads to the compil
 
 So why not just combine a server for development purpose with a static site generator? 
 
+Special thanks goes to [Henri Podolski](https://github.com/HenriPodolski/) for the idea and discussion.
+
 **Assemble?**
 
 For 2 1/2 years I am working with Assemble. It is a great tool and I like it a lot. 
@@ -306,4 +308,4 @@ When necessary an eco system for plugins will be integrated.
 
 ## License 
 
-see [LICENSE.md](LICENSE.md).
+see [LICENSE.md](https://github.com/Sebastian-Fitzner/mangony/blob/master/LICENSE.md).
