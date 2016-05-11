@@ -53,6 +53,9 @@ describe('mangony.templater', function () {
 		});
 
 		it('should render a simple page with global data', function () {
+			let globalData = {
+				"globalTitle": "b"
+			};
 			let pageFileData = {
 				"id": "b",
 				"assets": "./",
@@ -74,13 +77,12 @@ describe('mangony.templater', function () {
 
 			return app.templater.renderOne({
 				page: pageFileData,
-				cache: {
-					globalTitle: "b"
-				}
+				cache: globalData
 			}).then(() => {
 				let content = fsx.readFileSync(pageFileData.destDir + '/' + pageFileData.destFile, 'utf8');
 
-				expect(content).to.equal('b');
+				expect(globalData).to.deep.equal({"globalTitle": "b"});
+				expect(content).equal('b');
 			});
 		});
 
