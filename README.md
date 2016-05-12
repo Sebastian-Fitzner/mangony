@@ -1,4 +1,6 @@
-# Mangony
+<h1 align="center">
+<img width="400px" src="http://www.veams.org/downloads/logo.svg" alt="Logo Mangony" />
+</h1>
 
 <p align="center">
     <a href="http://badge.fury.io/js/mangony"><img src="https://badge.fury.io/js/mangony.svg" alt="NPM version" /></a>
