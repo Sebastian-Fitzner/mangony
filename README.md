@@ -11,7 +11,7 @@
 
 <p align="center"><strong>Yet another static site generator - fast, simple and powerful.</strong></p>
 
-<p align="center">Mangony fulfills just one task: It takes templates and compiles them to an output directory.</p>
+<p align="center">Mangony fulfills just one task: It takes handlebars templates and compiles them to an output directory.</p>
 
 ## Features
 
