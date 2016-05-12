@@ -19,7 +19,7 @@ _Think of Assemble ([grunt-assemble](https://github.com/assemble/grunt-assemble)
 2. By using the provided development server ([express](https://github.com/expressjs/express)) every change is completed in no time, no matter how many pages you have in your project.
 3. Only changed pages get compiled. 
 4. Creation of deep ids is possible for all types. 
-5. For every type (data, partials, layouts, pages) Mangony adds a watcher([chokidar](https://github.com/paulmillr/chokidar)).
+5. For every type (data, partials, layouts, pages) Mangony adds a watcher ([chokidar](https://github.com/paulmillr/chokidar)).
 6. [HJSON](https://github.com/laktak/hjson) is available.
 7. [Handlebars](https://github.com/wycats/handlebars.js/) version 4.x is integrated.
 8. Markdown pages with handlebars are supported.
@@ -49,7 +49,7 @@ Then render your files or start your development server:
 app.render();
 ```
 
-By using default options your files get compiled. 
+When using the default options your files get compiled. 
 
 ## Examples
 
@@ -102,6 +102,8 @@ const app = new Mangony({
 
 app.render();
 ```
+
+When using the `devServer` options all routes get registered.
 
 Now you can open your browser at `localhost:3000` and navigate to the page you want to change. 
 The url is the path to your page without a file extension (i.e. `/index`). 
