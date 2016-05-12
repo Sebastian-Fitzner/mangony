@@ -1,6 +1,6 @@
 {
 	"name": "mangony",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Yet another static site generator in NodeJS focussed on being fast and simple. Mangony fulfills just one task: It takes templates and compiles them to an output directory.",
 	"main": "index.js",
 	"scripts": {
@@ -14,6 +14,8 @@
 		"markdown pages",
 		"static",
 		"sites",
+		"express",
+		"simple site generator",
 		"static site generator"
 	],
 	"license": "MIT",
