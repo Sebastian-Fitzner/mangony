@@ -1,7 +1,7 @@
 {
 	"name": "mangony",
 	"version": "1.0.5",
-	"description": "Yet another static site generator in NodeJS focussed on being fast and simple. Mangony fulfills just one task: It takes templates and compiles them to an output directory.",
+	"description": "Yet another static site generator in NodeJS focussed on being fast and simple. Mangony fulfills just one task: It takes handlebars templates and compiles them to an output directory.",
 	"main": "index.js",
 	"scripts": {
 		"test": "./node_modules/.bin/mocha --reporter spec"
@@ -9,6 +9,12 @@
 	"keywords": [
 		"generator",
 		"Veams",
+		"handlebars",
+		"handlebars-layouts",
+		"templates",
+		"compiler",
+		"compile",
+		"render",
 		"Mangony",
 		"Grunt",
 		"markdown pages",
