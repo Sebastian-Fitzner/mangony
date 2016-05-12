@@ -71,27 +71,27 @@ const app = new Mangony({
         data: {
             dir: 'data',
             files: [
-                '/**/*.json',
-                '/**/*.hjson'
+                '**/*.json',
+                '**/*.hjson'
             ]
         },
         partials: {
             dir: 'partials',
             files: [
-                '/**/*.hbs'
+                '**/*.hbs'
             ]
         },
         pages: {
             dir: 'pages',
             files: [
-                '/**/*.hbs',
-                '/**/*.md'
+                '**/*.hbs',
+                '**/*.md'
             ]
         },
         layouts: {
             dir: 'layouts',
             files: [
-                '/**/*.hbs'
+                '**/*.hbs'
             ]
         }
     },
@@ -104,6 +104,7 @@ app.render();
 ```
 
 Now you can open your browser at `localhost:3000` and navigate to the page you want to change. 
+The url is the path to your page without a file extension (i.e. `/index`). 
 
 **prod.js**
 
@@ -118,27 +119,27 @@ const app = new Mangony({
         data: {
             dir: 'data',
             files: [
-                '/**/*.json',
-                '/**/*.hjson'
+                '**/*.json',
+                '**/*.hjson'
             ]
         },
         partials: {
             dir: 'partials',
             files: [
-                '/**/*.hbs'
+                '**/*.hbs'
             ]
         },
         pages: {
             dir: 'pages',
             files: [
-                '/**/*.hbs',
-                '/**/*.md'
+                '**/*.hbs',
+                '**/*.md'
             ]
         },
         layouts: {
             dir: 'layouts',
             files: [
-                '/**/*.hbs'
+                '**/*.hbs'
             ]
         }
     },
@@ -249,7 +250,7 @@ For every type you can create deep ids. The whole path to the file will be used.
 
 You can change the type directory to any folder you like. 
 
-!Important: for every type directory Mangony creates a watcher if `options.watch` is `true`.
+**Important: for every type directory Mangony creates a watcher if `options.watch` is `true`.**
 
 ### types[type].files
 
