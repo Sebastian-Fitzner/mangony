@@ -1,6 +1,6 @@
 {
 	"name": "mangony",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "Yet another static site generator in NodeJS focussed on being fast and simple. Mangony fulfills just one task: It takes handlebars templates and compiles them to an output directory.",
 	"main": "index.js",
 	"scripts": {
@@ -26,7 +26,10 @@
 	],
 	"license": "MIT",
 	"homepage": "https://github.com/Sebastian-Fitzner/mangony",
-	"repository": "https://github.com/Sebastian-Fitzner/mangony",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Sebastian-Fitzner/mangony.git"
+	},
 	"author": {
 		"name": "Sebastian Fitzner",
 		"email": "sebastian@veams.org",
