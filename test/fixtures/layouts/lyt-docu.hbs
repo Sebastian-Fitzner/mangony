@@ -6,6 +6,14 @@ sitemap: General
 ---
 {{#extend "lyt-default"}}
 	{{#content "main"}}
-		{{{yield}}}
+		<pre>
+			<code>
+				{{#syntax}}
+					{{{yield}}}
+				{{/syntax}}
+			</code>
+		</pre>
+
+		{{embeding 'test/fixtures/partials/globals/test-partial.hbs' 'hbs'}}
 	{{/content}}
 {{/extend}}
