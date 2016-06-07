@@ -62,6 +62,10 @@ Let`s say we want to develop a new app.
 ``` js
 const Mangony = require(`mangony`);
 const app = new Mangony({
+    allow: {
+        YFMLayout: false,
+        YFMContextData: false
+    },
     compileStaticFiles: false
     cwd: `src`,
     dest: `dist/`,
@@ -117,6 +121,10 @@ Let`s say we want to build our app.
 ``` js
 const Mangony = require(`mangony`);
 const app = new Mangony({
+    allow: {
+        YFMLayout: false,
+        YFMContextData: false
+    },
     cwd: `src`,
     dest: `dist/`
     types: {
@@ -158,6 +166,18 @@ app.render();
 Now you can find the complete rendered output in the destination folder.
 
 ## Options
+
+### allow.YFMLayout (`Boolean`)
+
+- default: `false`
+
+Add the possibility to reference layouts in YAML front matter. `{{{yield}}}` will be replaced in your referenced layout with the content of the page.
+
+### allow.YFMContextData (`Boolean`)
+
+- default: `false`
+
+Flag to add a specific data context for your page by referencing a data file id in YAML front matter. 
 
 ### assets
 

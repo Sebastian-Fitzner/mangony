@@ -6,7 +6,12 @@ var fsx = require('fs-extra');
 var Handlebars = require('handlebars');
 var expect = chai.expect;
 var Mangony = require('../index');
-var options = require('./support/options-factory')();
+var options = require('./support/options-factory')({
+	allow: {
+		YFMLayout: true,
+		YFMContextData: true
+	}
+});
 var app;
 
 describe('mangony.templater', function () {
@@ -83,6 +88,105 @@ describe('mangony.templater', function () {
 
 				expect(globalData).to.deep.equal({"globalTitle": "b"});
 				expect(content).equal('b');
+			});
+		});
+
+		it('should render a simple page with a YFM layout', function () {
+			let data = {
+				"a": {
+					"a": "test"
+				},
+				"__layouts": {
+					"lyt-docu": {
+						"id": "lyt-docu",
+						"parsed": {
+							"content": "\r\n\t\t{{{yield}}}\r\n\t"
+						}
+					}
+				},
+				"pages": {
+					"globals/test-partial": {
+						"id": "globals/test-partial",
+						"assets": "../",
+						"ext": ".html",
+						"srcExt": ".hbs",
+						"basename": "test-partial.hbs",
+						"filename": "test-partial",
+						"dirname": "test\\fixtures\\partials\\globals",
+						"destDir": "test/expected/",
+						"destSubDir": "globals",
+						"destFile": "globals/test-partial.html",
+						"serverFile": "globals/test-partial",
+						"raw": "---\r\ntestPartial: test partial\r\ncontextData: a\r\nlayout: \"lyt-docu\"\r\n---\r\n{{! ---\r\ngeneral: s-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n<div class=\"s-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options=\"{ &quot;test&quot;:  &quot;testing&quot;}\">\r\n\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\r\n\t<strong>\r\n\t\t{{a}}\r\n\t</strong>\r\n</div>\r\n",
+						"parsed": {
+							"orig": "---\r\ntestPartial: test partial\r\ncontextData: a\r\nlayout: \"lyt-docu\"\r\n---\r\n{{! ---\r\ngeneral: s-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n<div class=\"s-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options=\"{ &quot;test&quot;:  &quot;testing&quot;}\">\r\n\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\r\n\t<strong>\r\n\t\t{{a}}\r\n\t</strong>\r\n</div>\r\n",
+							"data": {
+								"testPartial": "test partial",
+								"layout": "lyt-docu"
+							},
+							"content": "Lorem {{a.a}}"
+						}
+					}
+				}
+			};
+
+			return app.templater.renderOne({
+				page: data.pages['globals/test-partial'],
+				cache: data
+			}).then(() => {
+				let content = fsx.readFileSync(data.pages['globals/test-partial'].destDir + '/' + data.pages['globals/test-partial'].destFile, 'utf8');
+
+				expect(content).equal('\r\n\t\tLorem test\r\n\t');
+			});
+		});
+
+		it('should render a simple page with a YFM context data', function () {
+			let data = {
+				"a": {
+					"a": "test"
+				},
+				"__layouts": {
+					"lyt-docu": {
+						"id": "lyt-docu",
+						"parsed": {
+							"content": "\r\n\t\t{{{yield}}}\r\n\t"
+						}
+					}
+				},
+				"pages": {
+					"globals/test-partial": {
+						"id": "globals/test-partial",
+						"assets": "../",
+						"ext": ".html",
+						"srcExt": ".hbs",
+						"basename": "test-partial.hbs",
+						"filename": "test-partial",
+						"dirname": "test\\fixtures\\partials\\globals",
+						"destDir": "test/expected/",
+						"destSubDir": "globals",
+						"destFile": "globals/test-partial.html",
+						"serverFile": "globals/test-partial",
+						"raw": "---\r\ntestPartial: test partial\r\ncontextData: a\r\nlayout: \"lyt-docu\"\r\n---\r\n{{! ---\r\ngeneral: s-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n<div class=\"s-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options=\"{ &quot;test&quot;:  &quot;testing&quot;}\">\r\n\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\r\n\t<strong>\r\n\t\t{{a}}\r\n\t</strong>\r\n</div>\r\n",
+						"parsed": {
+							"orig": "---\r\ntestPartial: test partial\r\ncontextData: a\r\nlayout: \"lyt-docu\"\r\n---\r\n{{! ---\r\ngeneral: s-tester\r\n============================================\r\n\r\nRequirements:\r\n- (only hbs)\r\n\r\nOptions:\r\n- testerClasses {String} - Modifier classes\r\n\r\nImportant Notes:\r\n\r\n--- }}\r\n<div class=\"s-tester{{#if testerClasses}} {{testerClasses}}{{/if}}\"\r\n     data-js-module=\"tester\"\r\n     data-js-options=\"{ &quot;test&quot;:  &quot;testing&quot;}\">\r\n\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\r\n\t<strong>\r\n\t\t{{a}}\r\n\t</strong>\r\n</div>\r\n",
+							"data": {
+								"testPartial": "test partial",
+								"contextData": "a",
+								"layout": "lyt-docu"
+							},
+							"content": "Lorem {{a}}"
+						}
+					}
+				}
+			};
+
+			return app.templater.renderOne({
+				page: data.pages['globals/test-partial'],
+				cache: data
+			}).then(() => {
+				let content = fsx.readFileSync(data.pages['globals/test-partial'].destDir + '/' + data.pages['globals/test-partial'].destFile, 'utf8');
+
+				expect(content).equal('\r\n\t\tLorem test\r\n\t');
 			});
 		});
 

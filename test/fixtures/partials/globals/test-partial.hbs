@@ -1,5 +1,7 @@
 ---
 testPartial: test partial
+contextData: a
+layout: "lyt-docu"
 ---
 {{! ---
 general: s-tester
@@ -17,5 +19,8 @@ Important Notes:
 <div class="s-tester{{#if testerClasses}} {{testerClasses}}{{/if}}"
      data-js-module="tester"
      data-js-options="{ &quot;test&quot;:  &quot;testing&quot;}">
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+	<strong>
+		{{a}}
+	</strong>
 </div>

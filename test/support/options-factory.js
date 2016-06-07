@@ -1,5 +1,9 @@
 module.exports = function optionsFactory(customOptions) {
 	var defaults = {
+		allow: {
+			YFMLayout: false,
+			YFMContextData: false
+		},
 		assets: '', // Assets directory
 		compileStaticFiles: true,
 		cwd: 'test/fixtures/',
