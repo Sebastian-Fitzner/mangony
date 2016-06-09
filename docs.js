@@ -46,7 +46,8 @@ var mangony = new Mangony({
 	flatten: false,
 	compileStaticFiles: false,
 	devServer: {
-		start: true
+		start: true,
+		port: 3001
 	}
 });
 
