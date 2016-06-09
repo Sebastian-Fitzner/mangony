@@ -322,11 +322,6 @@ Just checkout the repository, install all dependencies with `npm install` and ex
 
 ## Roadmap
 
-### <2.0.0
-In the current release (<2.0.0) the following things are missing and will be integrated in the near future: 
-
-- YAML as data files
-
 ### >=2.0.0
 
 When necessary an eco system for plugins will be integrated. 
