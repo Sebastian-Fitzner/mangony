@@ -1,0 +1,104 @@
+---
+title: Helpers
+menuLink: Helpers
+sortOrder: 02
+sitemap: General
+---
+
+{{#extend "lyt-default"}}
+	{{#content "main"}}
+
+		<h2>BeautifyHTML</h2>
+		{{#beautifyHTML}}
+			<div class="test">
+				<p>beautify start</p>
+
+				<p>beautify end</p>
+			</div>
+		{{/beautifyHTML}}
+		<hr>
+
+		<h2>Build Path</h2>
+		{{buildPath "build/path" "helper/test"}}
+		<hr>
+
+		<h2>Concat</h2>
+		{{concat "concat/helper/" "test"}}
+		<hr>
+		{{!debug this.currentPage.filename}}
+
+		<h2>Start Embeding</h2>
+		{{embeding "test/fixtures/partials/globals/test-partial.hbs"}}
+		<hr>
+
+		<h2>For Loop</h2>
+		<ul>
+			{{#for 0 2 1}}
+				<li>My Custom content</li>
+			{{/for}}
+		</ul>
+		<hr>
+
+		<h2>Highlight</h2>
+		{{#highlight "hbs"}}
+			<div class="test">
+				<p>wrapper start</p>
+				\{{{yield}}}
+				<p>wrapper end</p>
+			</div>
+		{{/highlight}}
+		<hr>
+
+		<h2>Limit</h2>
+		<ul>
+			{{#limit 0 2 limit}}
+				<li>{{test}}</li>
+			{{/limit}}
+		</ul>
+		<ul>
+			{{#limit 2 3 limit}}
+				<li>{{test}}</li>
+			{{/limit}}
+		</ul>
+		<hr>
+
+		<h2>Markdown</h2>
+		{{{markdown "test/fixtures/data/md.md"}}}
+		<hr>
+
+		<h2>Merge</h2>
+
+		{{#merge this with='{"custom": "content"}'}}
+			<p>{{currentPage.filename}}: {{custom}}</p>
+		{{/merge}}
+
+		{{#merge a with=b}}
+			<p>{{a}}: {{b}}</p>
+		{{/merge}}
+		<hr>
+
+		<h2>Random</h2>
+		my-id-{{random}}
+		<hr>
+
+		<h2>Times</h2>
+		<ul>
+			{{#times 3}}
+				<li>My Custom content {{this}}</li>
+			{{/times}}
+		</ul>
+
+		<hr>
+
+		<h2>WrapWith</h2>
+		{{#parseJSON '{"test": "test"}'}}
+		{{! WrapWith START: Test wrapper }}
+			{{#wrapWith "test-yield"}}
+				Wrap with template!
+			{{/wrapWith}}
+		{{! WrapWith END: Test wrapper }}
+		{{/parseJSON}}
+		<hr>
+
+	{{/content}}
+{{/extend}}
