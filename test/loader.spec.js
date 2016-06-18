@@ -23,14 +23,14 @@ describe('mangony.loader', function () {
 		it('should load all files in directory (globbing)', function () {
 			app.loader.getFiles(['test/fixtures/data/**/*']).then((result) => {
 				expect(result).to.be.an('array');
-				expect(result).to.have.lengthOf(4);
+				expect(result).to.have.lengthOf(6);
 			});
 		});
 
 		it('should load a all files in directory (globbing) and single file', function () {
 			app.loader.getFiles(['test/fixtures/data/*', 'test/fixtures/data/deep-data/d.hjson']).then((result) => {
 				expect(result).to.be.an('array');
-				expect(result).to.have.lengthOf(4);
+				expect(result).to.have.lengthOf(6);
 			});
 		});
 	});
