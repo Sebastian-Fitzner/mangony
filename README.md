@@ -26,7 +26,7 @@ _Think of Assemble ([grunt-assemble](https://github.com/assemble/grunt-assemble)
 7. [Handlebars](https://github.com/wycats/handlebars.js/) version 4.x is integrated.
 8. Markdown pages with handlebars are supported.
 9. [Markdown-it](https://github.com/markdown-it/markdown-it), [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) and [markdown-it-named-headers](https://github.com/leff/markdown-it-named-headers) are available.
-10. Provide many handlebars-helpers: 
+10. Mangony provides many handlebars-helpers: 
  - [handlebars-helpers](https://github.com/assemble/handlebars-helpers/)
  - [mangony-hbs-helpers](https://github.com/Sebastian-Fitzner/mangony-hbs-helpers)
  - [mangony-hbs-helper-wrap-with](https://github.com/Sebastian-Fitzner/mangony-hbs-helper-wrap-with)

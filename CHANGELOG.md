@@ -1,3 +1,10 @@
+### v1.0.17
+- Update packages
+- Update Readme
+
+### v1.0.16
+- Add custom mangony helpers
+
 ### v1.0.15
 - Add unpublish/publish flag for pages in YFM
 
