@@ -1,3 +1,6 @@
+### v1.0.18
+- Update bindEvents() in mangony to support renaming of pages in watch mode without errors 
+
 ### v1.0.17
 - Update packages
 - Update Readme
