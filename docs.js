@@ -21,6 +21,7 @@ var mangony = new Mangony({
 		},
 		partials: {
 			dir: 'partials',
+			createDeepIds: false,
 			files: [
 				'**/*.hbs'
 			]
