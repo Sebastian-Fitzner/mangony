@@ -1,3 +1,9 @@
+### v1.0.20
+- Bugfix: deep IDs for partials and layouts in watch mode
+
+### v1.0.19
+- Bugfix: deep IDs for partials
+
 ### v1.0.18
 - Update bindEvents() in mangony to support renaming of pages in watch mode without errors 
 
