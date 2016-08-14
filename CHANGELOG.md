@@ -1,3 +1,8 @@
+### v1.1.0
+- Add livereload (browser-sync) to development server
+- Add options for livereload
+- Add better event handling 
+
 ### v1.0.20
 - Bugfix: deep IDs for partials and layouts in watch mode
 

@@ -213,11 +213,17 @@ The current working directory.
 
 Output directory.
 
-### devServer.start
+### devServer.bs
 
-- default: `false` 
+- default: `null` 
 
-Set to `true` if you want to use the provided development server.
+You can pass your own Browser-Sync instance. 
+
+### devServer.bsOptions
+
+- default: `null` 
+
+You can override the default Mangony options which will be used in Browser-Sync. 
 
 ### devServer.express
 
@@ -230,6 +236,13 @@ You can pass your own express instance.
 - default: `3000` 
 
 Change the port of the development server. 
+
+### devServer.start
+
+- default: `false` 
+
+Set to `true` if you want to use the provided development server.
+
 
 ### exportData
 

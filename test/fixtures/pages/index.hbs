@@ -4,16 +4,17 @@ menuLink: Home
 sortOrder: 01
 sitemap: General
 ---
-
 {{#extend "lyt-default"}}
 	{{#content "main"}}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolorem error esse ex, ipsam itaque iusto laudantium libero necessitatibus officiis possimus quam reiciendis sint totam unde ut voluptatum. Blanditiis, quisquam. test
-		{{#with this.deep-data_d}}
-			{{d}}
-		{{/with}}
-		{{#with a}}
-			{{a}}
-		{{/with}}
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolorem error esse ex, ipsam itaque iusto laudantium libero necessitatibus officiis possimus quam reiciendis sint totam unde ut voluptatum. Blanditiis, quisquam.</p>
+		<p>test
+			{{#with this.deep-data_d}}
+				{{d}}
+			{{/with}}
+			{{#with a}}
+				{{a}}
+			{{/with}}
+		</p>
 		{{> test-partial }}
 	{{/content}}
 {{/extend}}
