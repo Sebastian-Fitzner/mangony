@@ -1,3 +1,9 @@
+### v1.1.5
+- Update server.js port for browser-sync
+
+### v1.1.3-v1.1.4
+- Version handling of markdown-it plugins
+
 ### v1.1.2
 - Update error messages in loader.js
 
