@@ -1,3 +1,7 @@
+### v1.1.1
+- Clean up server.js in options handling
+- Bump versions 
+
 ### v1.1.0
 - Add livereload (browser-sync) to development server
 - Add options for livereload
