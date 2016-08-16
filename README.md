@@ -223,7 +223,7 @@ You can pass your own Browser-Sync instance.
 
 - default: `null` 
 
-You can override pass your custom [Browser-Sync options](https://www.browsersync.io/docs/options) object. 
+You can pass your custom [Browser-Sync options](https://www.browsersync.io/docs/options) object.
 
 ### devServer.express
 
