@@ -52,7 +52,7 @@
     "hjson": "~2.0.3",
     "mangony-hbs-helper-wrap-with": "~0.0.1",
     "mangony-hbs-helpers": "~0.0.4",
-    "markdown-it": "~7.0.0",
+    "markdown-it": "~6.1.1",
     "markdown-it-attrs": "~0.6.2",
     "markdown-it-named-headers": "0.0.4",
     "mkdirp": "~0.5.1",
