@@ -1,3 +1,6 @@
+### v1.1.6
+- Add default port to bsOptions
+
 ### v1.1.5
 - Update server.js port for browser-sync
 
