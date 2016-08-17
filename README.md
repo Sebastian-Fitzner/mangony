@@ -229,7 +229,13 @@ You can pass your custom [Browser-Sync options](https://www.browsersync.io/docs/
 
 - default: `null` 
 
-You can pass your own express instance. 
+You can pass your own express instance.
+
+### devServer.injectScript
+
+- default: true
+
+Set to `false` if you want to disable the injection of the browser-sync script.
 
 ### devServer.port
 

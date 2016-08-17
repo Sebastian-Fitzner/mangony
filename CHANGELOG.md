@@ -1,3 +1,6 @@
+### v1.1.7
+- Add injectScript option
+
 ### v1.1.6
 - Add default port to bsOptions
 
