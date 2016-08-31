@@ -1,3 +1,6 @@
+### v1.1.8
+- Fix register route handling in watch mode
+
 ### v1.1.7
 - Add injectScript option
 
