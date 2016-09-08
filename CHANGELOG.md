@@ -1,3 +1,9 @@
+### v1.1.10
+- Add devServer.bsEnabled and devServer.useExt
+
+### v1.1.9
+- Bump versions
+
 ### v1.1.8
 - Fix register route handling in watch mode
 

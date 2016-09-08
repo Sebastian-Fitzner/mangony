@@ -217,7 +217,13 @@ Output directory.
 
 - default: `null` 
 
-You can pass your own Browser-Sync instance. 
+You can pass your own Browser-Sync instance.
+
+### devServer.bsEnabled
+
+- default: `true`
+
+You can disable browser-sync.
 
 ### devServer.bsOptions
 
@@ -249,6 +255,11 @@ Change the port of the development server.
 
 Set to `true` if you want to use the provided development server.
 
+### devServer.useExt
+
+- default: `false`
+
+Set to `true` if you want to use `options.ext` in your routes.
 
 ### exportData
 
