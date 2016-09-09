@@ -1,3 +1,6 @@
+### v1.1.11
+- Update templater.js to support manually added pages  to the cache without directory context and srcExt
+
 ### v1.1.10
 - Add devServer.bsEnabled and devServer.useExt
 
