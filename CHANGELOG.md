@@ -1,3 +1,6 @@
+### v1.1.12
+- Update mangony-hbs-helpers version
+
 ### v1.1.11
 - Update templater.js to support manually added pages  to the cache without directory context and srcExt
 
