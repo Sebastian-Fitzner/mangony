@@ -1,3 +1,6 @@
+### v1.1.13
+- Add handlebars instance instead of using one global one (templater.js)
+
 ### v1.1.12
 - Update mangony-hbs-helpers version
 
