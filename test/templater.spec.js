@@ -23,7 +23,6 @@ describe('mangony.templater', function () {
 	describe('template engine', function () {
 		it('should be handlebars', function () {
 			expect(app.templater.engine).to.be.an('object');
-			expect(app.templater.engine).to.equal(Handlebars);
 		});
 	});
 

@@ -1,3 +1,6 @@
+### v1.1.14
+- Add event namespace to support multiple watching instances at the same time.
+
 ### v1.1.13
 - Add handlebars instance instead of using one global one (templater.js)
 
