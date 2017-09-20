@@ -1,3 +1,6 @@
+### v1.1.15
+- Update assets path creation when flatten option is set.
+
 ### v1.1.14
 - Add event namespace to support multiple watching instances at the same time.
 
