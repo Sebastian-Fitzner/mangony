@@ -342,9 +342,9 @@ Special thanks goes to [Henri Podolski](https://github.com/HenriPodolski/) for t
 
 **Assemble?**
 
-For 2 1/2 years I am working with Assemble. It is a great tool and I like it a lot. 
+For 2 1/2 years I have worked with Assemble. It is a great tool and I like it a lot.
 
-The new [Assemble](https://github.com/assemble/assemble) (a full stack site generator) seems to be pretty nice, but it doesn`t fit so well in my current stack. Grunt-assemble however has [a major bug](https://github.com/assemble/grunt-assemble/issues/22), so it is not usable in the latest release. 
+The new [Assemble](https://github.com/assemble/assemble) (a full stack site generator) seems to be pretty nice, but it doesn`t fit so well in my current stack.
 
 **Last but not least**
 
