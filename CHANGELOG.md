@@ -1,3 +1,6 @@
+### v1.1.16
+- Update magnony-hbs-helper package version to support new helpers.
+
 ### v1.1.15
 - Update assets path creation when flatten option is set.
 
