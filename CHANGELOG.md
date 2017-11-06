@@ -1,3 +1,6 @@
+### v1.2.1
+- Update mangony rendering process to support page.settings, and context merging.
+
 ### v1.1.16
 - Update magnony-hbs-helper package version to support new helpers.
 

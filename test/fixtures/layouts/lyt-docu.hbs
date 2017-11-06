@@ -8,12 +8,8 @@ sitemap: General
 	{{#content "main"}}
 		<pre>
 			<code>
-				{{#syntax}}
-					{{{yield}}}
-				{{/syntax}}
+				{{{yield}}}
 			</code>
 		</pre>
-
-		{{embeding 'test/fixtures/partials/globals/test-partial.hbs' 'hbs'}}
 	{{/content}}
 {{/extend}}
