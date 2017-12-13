@@ -1,3 +1,6 @@
+### v1.2.2
+- Fix bug in custom helper registration with path resolving included.
+
 ### v1.2.1
 - Update mangony rendering process to support page.settings, and context merging.
 
