@@ -257,9 +257,9 @@ Set to `true` if you want to use the provided development server.
 
 ### devServer.useExt
 
-- default: `false`
+- default: `true`
 
-Set to `true` if you want to use `options.ext` in your routes.
+Set to `false` if you do not want to use extensions in your routes.
 
 ### exportData
 
@@ -272,6 +272,7 @@ Set to `true` if you want to use `options.ext` in your routes.
 - default: `".html"` 
 
 Define the extension of your output files. 
+This can be overridden per file by using `YAML Front Matter` or `page.settings.json`.
 
 ### flatten
 

@@ -28,7 +28,7 @@ var mangony = new Mangony({
 			]
 		},
 		pages: {
-			dir: 'partials',
+			dir: 'pages',
 			files: [
 				'**/*.hbs',
 				'**/*.md'
@@ -45,9 +45,10 @@ var mangony = new Mangony({
 		'helpers/*.js'
 	],
 	watch: true,
-	compileStaticFiles: true,
+	compileStaticFiles: false,
 	devServer: {
-		start: false,
+		useExt: false,
+		start: true,
 		port: 3000
 	}
 });
