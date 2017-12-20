@@ -1,5 +1,8 @@
+### v1.3.1
+- Add extension definition for single page by using page.settings.
+
 ### v1.3.0
-- Add extension definition for single page by using `YAML` or `page.settings`.
+- Add extension definition for single page by using YAML Front Matter.
 
 ### v1.2.2
 - Fix bug in custom helper registration with path resolving included.
