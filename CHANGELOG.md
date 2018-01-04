@@ -1,3 +1,6 @@
+### v1.3.3
+- Add directory check for watcher, because chokidar does not provide a good solution. 
+
 ### v1.3.2
 - Bugfix for major server rendering issue, when page is changed. 
 
