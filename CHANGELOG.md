@@ -1,3 +1,6 @@
+### v1.3.2
+- Bugfix for major server rendering issue, when page is changed. 
+
 ### v1.3.1
 - Add extension definition for single page by using page.settings.
 
