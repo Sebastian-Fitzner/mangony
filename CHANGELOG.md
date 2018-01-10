@@ -1,3 +1,6 @@
+### v1.3.4
+- Add better watcher handling for file and folder existence. 
+
 ### v1.3.3
 - Add directory check for watchers, because chokidar falls back to `cwd` which leads to multiple incremental builds and reloads per file. 
 
