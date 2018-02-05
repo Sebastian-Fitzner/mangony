@@ -261,6 +261,18 @@ Set to `true` if you want to use the provided development server.
 
 Set to `false` if you do not want to use extensions in your routes.
 
+### devServer.usePort
+
+- default: `true`
+
+Set to `false` if you have already a port provided to express.
+
+### devServer.useAssetsDir
+
+- default: `true`
+
+Set to `false` if you have already an asset directory provided to express.
+
 ### exportData
 
 - default : `false`

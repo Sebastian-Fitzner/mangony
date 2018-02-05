@@ -1,3 +1,6 @@
+### v1.4.0
+- Add browser-sync as option. 
+
 ### v1.3.4
 - Add better watcher handling for file and folder existence. 
 

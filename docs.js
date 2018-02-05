@@ -47,9 +47,12 @@ var mangony = new Mangony({
 	watch: true,
 	compileStaticFiles: false,
 	devServer: {
-		useExt: false,
+		bsEnabled: false,
+		useExt: true,
 		start: true,
-		port: 3000
+		port: 3000,
+		usePort: false,
+		useAssetsDir: false
 	}
 });
 
