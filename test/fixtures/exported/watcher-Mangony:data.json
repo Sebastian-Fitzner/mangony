@@ -1,0 +1,12 @@
+{
+    "/Users/sebastian.fitzner/projects/mangony/mangony/test/fixtures/data": [
+        "a.json",
+        "b.json",
+        "c.hjson",
+        "limit.hjson",
+        "test-partial.settings.json"
+    ],
+    "/Users/sebastian.fitzner/projects/mangony/mangony/test/fixtures/data/deep-data": [
+        "d.hjson"
+    ]
+}

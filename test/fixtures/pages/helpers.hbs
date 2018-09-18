@@ -96,14 +96,15 @@ sitemap: General
 		<hr>
 
 		<h2>WrapWith</h2>
-		{{#parseJSON '{"test": "test"}'}}
+		{{!#with (jsonParse '{"test": "test"}')}}
 		{{! WrapWith START: Test wrapper }}
 			{{#wrapWith "test-yield"}}
 				Wrap with template!
 			{{/wrapWith}}
 		{{! WrapWith END: Test wrapper }}
-		{{/parseJSON}}
+		{{!/with}}
 		<hr>
+		<div class="test">{{name}} kdflsdf</div>
 
 	{{/content}}
 {{/extend}}
