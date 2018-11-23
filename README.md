@@ -207,6 +207,12 @@ Enable/disable the compiling of your files.
 
 The current working directory.
 
+### debug
+
+- default: `false`
+
+Print more comments in your terminal to debug a bit better ;).
+
 ### dest
 
 - default: `"app"`

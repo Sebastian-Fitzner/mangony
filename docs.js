@@ -7,6 +7,7 @@ var mangony = new Mangony({
 	},
 	cwd: 'test/fixtures/',
 	dest: 'test/expected',
+	debug: true,
 	exportData: true,
 	flatten: true,
 	collections: [
@@ -45,15 +46,8 @@ var mangony = new Mangony({
 		'helpers/*.js'
 	],
 	watch: true,
-	compileStaticFiles: false,
-	devServer: {
-		bsEnabled: false,
-		useExt: true,
-		start: true,
-		port: 3000,
-		usePort: false,
-		useAssetsDir: false
-	}
+	compileStaticFiles: true,
+	devServer: false
 });
 
 mangony.render();
