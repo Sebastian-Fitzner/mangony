@@ -1,6 +1,6 @@
 {
   "name": "mangony",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "description": "Yet another static site generator in NodeJS focussed on being fast and simple. Mangony fulfills just one task: It takes handlebars templates and compiles them to an output directory.",
   "main": "index.js",
   "scripts": {
@@ -51,7 +51,7 @@
     "handlebars-layouts": "~3.1.4",
     "hjson": "~3.1.1",
     "mangony-hbs-helper-wrap-with": "~0.0.8",
-    "mangony-hbs-helpers": "^0.6.4",
+    "mangony-hbs-helpers": "^0.7.0",
     "markdown-it": "~8.4.1",
     "markdown-it-attrs": "2.1.0",
     "markdown-it-named-headers": "0.0.4",
