@@ -7,7 +7,7 @@ var mangony = new Mangony({
 		YFMLayout: true
 	},
 	cwd: 'test/fixtures/',
-	dest: 'test/expected',
+	dest: 'test/expected/hbs',
 	exportData: true,
 	ext: '.html',
 	flatten: true,

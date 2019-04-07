@@ -22,7 +22,7 @@ describe('Mangony', function () {
 		});
 
 		it('should create a data object from page which can be used in rendering process', function () {
-			let path = app.options.cwd + app.options.types.pages.dir + '/' + 'a.hbs';
+			let path = app.options.cwd + '/' + app.options.types.pages.dir + '/' + 'a.hbs';
 			let type = 'pages';
 
 			return loader.readFile(path)
@@ -40,7 +40,7 @@ describe('Mangony', function () {
 					expect(data.srcExt).to.equal('.hbs');
 					expect(data.basename).to.equal('a.hbs');
 					expect(data.filename).to.equal('a');
-					expect(data.dirname).to.equal('test/fixtures/pages');
+					expect(data.dirname).to.equal('test/fixtures/hbs/pages');
 					expect(data.destDir).to.equal(app.dest);
 					expect(data.destSubDir).to.equal('');
 					expect(data.destFile).to.equal('a.html');

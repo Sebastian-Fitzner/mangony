@@ -6,7 +6,7 @@ module.exports = function optionsFactory(customOptions) {
 		},
 		assets: '', // Assets directory
 		compileStaticFiles: true,
-		cwd: 'test/fixtures/',
+		cwd: 'test/fixtures/hbs',
 		debug: false,
 		dest: 'test/expected',
 		devServer: {

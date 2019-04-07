@@ -1,9 +1,0 @@
-{
-    "/Users/sebastian.fitzner/projects/mangony/mangony/test/fixtures/partials/globals": [
-        "comment.hbs",
-        "test-partial.hbs"
-    ],
-    "/Users/sebastian.fitzner/projects/mangony/mangony/test/fixtures/partials/utilities": [
-        "test-yield.hbs"
-    ]
-}
