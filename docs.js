@@ -1,4 +1,5 @@
 var Mangony = require('./index');
+var TemplaterPlugin = require('./lib/plugins/hbs-templater');
 
 var mangony = new Mangony({
 	allow: {
@@ -6,9 +7,9 @@ var mangony = new Mangony({
 		YFMLayout: true
 	},
 	cwd: 'test/fixtures/',
-	dest: 'test/expected',
-	debug: true,
+	dest: 'test/expected/hbs',
 	exportData: true,
+	ext: '.html',
 	flatten: true,
 	collections: [
 		'sitemap', 'components'
@@ -21,18 +22,17 @@ var mangony = new Mangony({
 				'**/*.hjson'
 			]
 		},
-		partials: {
-			dir: 'partials',
-			createDeepIds: false,
-			files: [
-				'**/*.hbs'
-			]
-		},
 		pages: {
 			dir: 'pages',
 			files: [
 				'**/*.hbs',
 				'**/*.md'
+			]
+		},
+		partials: {
+			dir: 'partials',
+			files: [
+				'**/*.hbs'
 			]
 		},
 		layouts: {
@@ -42,12 +42,13 @@ var mangony = new Mangony({
 			]
 		}
 	},
-	helpers: [
-		'helpers/*.js'
-	],
-	watch: true,
-	compileStaticFiles: true,
-	devServer: false
+	watch: true
 });
 
-mangony.render();
+mangony.render()
+	.then(() => mangony.use(TemplaterPlugin, {
+			helpers: [
+				'test/fixtures/helpers/*.js'
+			]
+		})
+	);

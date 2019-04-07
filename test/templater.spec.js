@@ -6,6 +6,7 @@ var fsx = require('fs-extra');
 var Handlebars = require('handlebars');
 var expect = chai.expect;
 var Mangony = require('../index');
+const templaterPlugin = require('../lib/plugins/hbs-templater');
 var options = require('./support/options-factory')({
 	allow: {
 		YFMLayout: true,
@@ -17,6 +18,13 @@ var app;
 describe('mangony.templater', function () {
 	beforeEach(function () {
 		app = new Mangony(options);
+
+		return app.render()
+			.then(() => app.use(templaterPlugin, {
+				helpers: [
+					'helpers/*.js'
+				]
+			}))
 	});
 
 
@@ -135,7 +143,7 @@ describe('mangony.templater', function () {
 			}).then(() => {
 				let content = fsx.readFileSync(data.pages['globals/test-partial'].destDir + '/' + data.pages['globals/test-partial'].destFile, 'utf8');
 
-				expect(content).equal('\r\n\t\tLorem test\r\n\t');
+				expect(content).equal('Lorem test');
 			});
 		});
 
@@ -173,7 +181,7 @@ describe('mangony.templater', function () {
 								"contextData": "a",
 								"layout": "lyt-docu"
 							},
-							"content": "Lorem {{a}}"
+							"content": "Lorem {{a.a}}"
 						}
 					}
 				}
@@ -185,7 +193,7 @@ describe('mangony.templater', function () {
 			}).then(() => {
 				let content = fsx.readFileSync(data.pages['globals/test-partial'].destDir + '/' + data.pages['globals/test-partial'].destFile, 'utf8');
 
-				expect(content).equal('\r\n\t\tLorem test\r\n\t');
+				expect(content).equal('Lorem test');
 			});
 		});
 
