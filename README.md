@@ -9,9 +9,9 @@
 	<a href="LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license" /></a>
 </p>
 
-<p align="center"><strong>Yet another static site generator - fast, simple and powerful.</strong></p>
+<p align="center"><strong>Yet another static site generator - fast, simple, powerful and pluggable.</strong></p>
 
-<p align="center">Mangony fulfills just one task: It takes handlebars templates and compiles them to an output directory.</p>
+<p align="center">Mangony fulfills just one task: It takes files, saves them in cache, use templates and compiles them to an output directory.</p>
 
 ## Features
 
@@ -49,10 +49,16 @@ Just create a new instance of Mangony:
 const app = new Mangony();
 ``` 
 
-Then render your files or start your development server:
+Then render your mangony instance:
 
 ``` js
 app.render();
+```
+
+To render files with a template engine you need to add a plugin. There are two engines provided to you, but you can easily create your own if you want to. 
+
+``` js 
+
 ```
 
 When using the default options your files get compiled. 
@@ -73,9 +79,6 @@ const app = new Mangony({
     compileStaticFiles: false
     cwd: `src`,
     dest: `dist/`,
-    devServer: {
-        start: true
-    },
     watch: true,
     types: {
         data: {
@@ -361,7 +364,7 @@ Special thanks goes to [Henri Podolski](https://github.com/HenriPodolski/) for t
 
 **Assemble?**
 
-For 2 1/2 years I have worked with Assemble. It is a great tool and I like it a lot.
+For a long time I have worked with Assemble. It is a great tool and I like it a lot.
 
 The new [Assemble](https://github.com/assemble/assemble) (a full stack site generator) seems to be pretty nice, but it doesn`t fit so well in my current stack.
 
@@ -373,11 +376,6 @@ I just wanted to develop a static site generator.
 
 Just checkout the repository, install all dependencies with `npm install` and execute `npm test`. 
 
-## Roadmap
-
-### >=2.0.0
-
-When necessary an eco system for plugins will be integrated. 
 
 ## License 
 

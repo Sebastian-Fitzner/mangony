@@ -1,6 +1,6 @@
 var Mangony = require('./index');
-var TemplaterPlugin = require('./lib/plugins/ftl-templater');
-var ServerPlugin = require('./lib/plugins/server');
+var TemplaterPlugin = require('./index').plugins.ftlTemplaterPlugin;
+var ServerPlugin = require('./index').plugins.serverPlugin;
 
 var mangony = new Mangony({
 	allow: {
