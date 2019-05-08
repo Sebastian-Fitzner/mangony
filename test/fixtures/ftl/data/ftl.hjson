@@ -1,7 +1,8 @@
 {
 	"title": "My test title",
+	"dynamicImport": "/layouts/layout.ftl",
 	"myFtlData": {
-		"partialName": "my partial data"
+		"partialName": "my partial name"
 	},
 	"dynamicPartial": "/partials/test.ftl"
 }

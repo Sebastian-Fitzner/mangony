@@ -6,7 +6,7 @@
 
 <#macro defaultFooter>
 <p>
-	defaultFooter here
+	defaultFooter is working
 </p>
 </#macro>
 

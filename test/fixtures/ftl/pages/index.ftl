@@ -1,6 +1,7 @@
-<#import "/layouts/layout.ftl" as page />
-<#import "/layouts/section.ftl" as util />
 <#assign context = ftl>
+
+<#import "${context.dynamicImport}" as page />
+<#import "/layouts/section.ftl" as util />
 
 <#macro header>
 <strong>
@@ -14,10 +15,10 @@
 <h3>Title: ${context.title}</h3>
 
 <div class="partial-wrapper">
-	<#assign context=ftl.myFtlData>
+	<#assign context=context.myFtlData>
 
 	<@util.section>
-		<#include ftl.dynamicPartial />
+		<#include "/partials/test.ftl" />
 	</@util.section>
 </div>
 
