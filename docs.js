@@ -1,13 +1,16 @@
 var Mangony = require('./index');
-var TemplaterPlugin = require('./lib/plugins/hbs-templater');
+var TemplaterPlugin = require('./index').plugins.hbsTemplaterPlugin;
+var ServerPlugin = require('./index').plugins.serverPlugin;
+var express = require('express');
 
 var mangony = new Mangony({
 	allow: {
 		YFMContextData: true,
 		YFMLayout: true
 	},
-	cwd: 'test/fixtures/',
+	cwd: 'test/fixtures/hbs',
 	dest: 'test/expected/hbs',
+	generatePagesByFile: 'pages',
 	exportData: true,
 	ext: '.html',
 	flatten: true,
@@ -47,8 +50,20 @@ var mangony = new Mangony({
 
 mangony.render()
 	.then(() => mangony.use(TemplaterPlugin, {
-			helpers: [
-				'test/fixtures/helpers/*.js'
-			]
-		})
-	);
+		helpers: [
+			'test/fixtures/helpers/*.js'
+		],
+		compileStaticFiles: false
+	}))
+	.then(() => mangony.use(ServerPlugin, {
+		express: express(),
+		logSnippet: false,
+		bsEnabled: true,
+		injectScript: true,
+		useExt: true,
+		start: true,
+		port: 3000,
+		usePort: true,
+		useAssetsDir: false,
+		bsOptions: {}
+	}));

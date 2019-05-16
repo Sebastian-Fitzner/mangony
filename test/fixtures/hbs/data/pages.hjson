@@ -1,0 +1,14 @@
+{
+	"page_01": {
+		"pageLayout": "pages",
+		"data": {
+			"d": "test page 01"
+		}
+	},
+	"page_02": {
+		"pageLayout": "pages",
+		"data": {
+			"d": "test page 02"
+		}
+	}
+}

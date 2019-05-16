@@ -1,0 +1,18 @@
+{{#extend "lyt-default"}}
+	{{#content "main"}}
+
+		<h2>{{name}}</h2>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolorem error esse ex, ipsam itaque iusto laudantium libero necessitatibus officiis possimus quam reiciendis sint totam unde ut voluptatum. Blanditiis, quisquam.</p>
+		<p>test
+			{{#with data}}
+				{{d}}
+			{{/with}}
+			{{#with a}}
+				{{a}}
+			{{/with}}
+		</p>
+		{{> test-partial }}
+
+	{{/content}}
+{{/extend}}
