@@ -1,5 +1,5 @@
 <h1 align="center">
-<img width="400px" src="https://veams.org/downloads/logo.svg" alt="Logo Mangony" />
+<img width="400px" src="https://github.com/Sebastian-Fitzner/mangony/blob/master/logo.svg" alt="Logo Mangony" />
 </h1>
 
 <p align="center">
