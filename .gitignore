@@ -1,4 +1,5 @@
 .idea
+.DS_Store
 test/expected
 node_modules
 server.js
