@@ -4,10 +4,6 @@ var ServerPlugin = require('./index').plugins.serverPlugin;
 var express = require('express');
 
 var mangony = new Mangony({
-	allow: {
-		YFMContextData: true,
-		YFMLayout: true
-	},
 	cwd: 'test/fixtures/hbs',
 	dest: 'test/expected/hbs',
 	generatePagesByFile: 'pages',
@@ -53,7 +49,11 @@ mangony.render()
 		helpers: [
 			'test/fixtures/helpers/*.js'
 		],
-		compileStaticFiles: false
+		compileStaticFiles: false,
+		allow: {
+			YFMContextData: true,
+			YFMLayout: true
+		},
 	}))
 	.then(() => mangony.use(ServerPlugin, {
 		express: express(),
