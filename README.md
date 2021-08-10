@@ -39,6 +39,7 @@ For the installation of the Grunt plugin, see [grunt-mangony](https://github.com
 Just create a new instance of Mangony: 
 
 ``` js
+const Mangony = require(`mangony`);
 const app = new Mangony();
 ```
 
@@ -49,9 +50,11 @@ app.render();
 ```
 
 To render files with a template engine you need to add a plugin. There are some engines provided to you, but you can easily create your own if you want to.
+Let's go with JSX for now: 
 
 ``` js 
-
+app.render()
+   .then(() => app.use(require(`mangony`).plugins.jsxTemplaterPlugin));
 ```
 
 When using the default options your files get compiled. But you can also integrate the development server. 
