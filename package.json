@@ -1,7 +1,7 @@
 {
 	"name": "mangony",
-	"version": "2.0.0-alpha.9",
-	"description": "Yet another static site generator in NodeJS focussed on being fast and simple. Mangony fulfills just one task: It takes handlebars templates and compiles them to an output directory.",
+	"version": "2.0.0-alpha10",
+	"description": "Yet another static site generator in NodeJS focussed on being fast and simple. Mangony fulfills just one task: It takes templates (like handlebars or jsx) and compiles them to an output directory.",
 	"main": "index.js",
 	"scripts": {
 		"test": "./node_modules/.bin/mocha --reporter spec"
@@ -9,6 +9,8 @@
 	"keywords": [
 		"generator",
 		"Veams",
+		"react",
+		"react-static",
 		"handlebars",
 		"handlebars-layouts",
 		"templates",
@@ -37,33 +39,34 @@
 	},
 	"dependencies": {
 		"bluebird": "~3.7.2",
-		"browser-sync": "^2.26.13",
-		"chalk": "~4.1.0",
-		"chokidar": "~3.4.3",
+		"browser-sync": "^2.27.4",
+		"chalk": "^4.1.1",
+		"chokidar": "^3.5.2",
 		"connect-browser-sync": "^2.1.0",
 		"deep-extend": "~0.6.0",
+		"esbuild": "^0.12.16",
 		"express": "~4.17.1",
 		"freemarker.js": "^1.4.0",
-		"fs-extra": "~9.0.1",
-		"glob": "~7.1.6",
-		"gray-matter": "~4.0.2",
-		"handlebars": "~4.7.6",
+		"fs-extra": "^10.0.0",
+		"glob": "^7.1.7",
+		"gray-matter": "^4.0.3",
+		"handlebars": "^4.7.7",
 		"handlebars-helpers": "~0.10.0",
 		"handlebars-layouts": "~3.1.4",
 		"hjson": "~3.2.2",
 		"mangony-hbs-helper-wrap-with": "~0.0.8",
 		"mangony-hbs-helpers": "^0.7.0",
-		"markdown-it": "~12.0.2",
+		"markdown-it": "^12.1.0",
 		"markdown-it-attrs": "3.0.3",
 		"mkdirp": "~1.0.4",
 		"multi-glob": "~1.0.2",
-		"path": "~0.12.7",
-		"react": "^17.0.1",
-		"react-dom": "^17.0.1"
+		"path": "~0.12.7"
 	},
 	"devDependencies": {
-		"chai": "^4.2.0",
+		"chai": "^4.3.4",
 		"deepmerge": "^4.2.2",
-		"mocha": "^8.2.1"
+		"mocha": "^9.0.3",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
 	}
 }

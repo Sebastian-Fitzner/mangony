@@ -1,0 +1,16 @@
+{
+  "variations": {
+    "simple": {
+      "variationName": "Simple",
+      props: {
+        "text": "text"
+      }
+    },
+    "advanced": {
+      "variationName": "Advanced",
+      props: {
+        "text": "test text 2"
+      }
+    },
+  }
+}

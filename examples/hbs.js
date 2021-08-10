@@ -1,16 +1,13 @@
-var Mangony = require('./index');
-var TemplaterPlugin = require('./index').plugins.ftlTemplaterPlugin;
-var ServerPlugin = require('./index').plugins.serverPlugin;
+var Mangony = require('../index');
+var TemplaterPlugin = require('../index').plugins.hbsTemplaterPlugin;
+var ServerPlugin = require('../index').plugins.serverPlugin;
 var express = require('express');
 
 var mangony = new Mangony({
-	allow: {
-		YFMContextData: true,
-		YFMLayout: true
-	},
-	cwd: 'test/fixtures/ftl',
-	dest: 'test/expected/ftl',
-	exportData: false,
+	cwd: 'test/fixtures/hbs',
+	dest: 'test/expected/hbs',
+	generatePagesByFile: 'pages',
+	exportData: true,
 	ext: '.html',
 	flatten: true,
 	collections: [
@@ -27,29 +24,37 @@ var mangony = new Mangony({
 		pages: {
 			dir: 'pages',
 			files: [
-				'**/*.ftl',
+				'**/*.hbs',
 				'**/*.md'
 			]
 		},
 		partials: {
 			dir: 'partials',
 			files: [
-				'**/*.ftl'
+				'**/*.hbs'
 			]
 		},
 		layouts: {
 			dir: 'layouts',
 			files: [
-				'**/*.ftl'
+				'**/*.hbs'
 			]
 		}
 	},
-	watch: true,
-	compileStaticFiles: false
+	watch: true
 });
 
 mangony.render()
-	.then(() => mangony.use(TemplaterPlugin))
+	.then(() => mangony.use(TemplaterPlugin, {
+		helpers: [
+			'test/fixtures/helpers/*.js'
+		],
+		compileStaticFiles: false,
+		allow: {
+			YFMContextData: true,
+			YFMLayout: true
+		},
+	}))
 	.then(() => mangony.use(ServerPlugin, {
 		express: express(),
 		logSnippet: false,

@@ -4,3 +4,4 @@ test/expected
 node_modules
 example.js
 /test/fixtures/exported/
+/test/fixtures/jsx/.mangony/
