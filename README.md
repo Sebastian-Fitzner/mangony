@@ -67,7 +67,6 @@ const Mangony = require(`mangony`);
 const jsx = require(`mangony`).plugins.jsxTemplaterPlugin;
 const devServer = require(`mangony`).plugins.serverPlugin;
 const app = new Mangony({
-    compileStaticFiles: false
     cwd: `src`,
     dest: `dist/`,
     watch: true,
@@ -101,7 +100,9 @@ const app = new Mangony({
 });
 
 app.render()
-   .then(() => app.use(jsxTemplaterPlugin)
+   .then(() => app.use(jsxTemplaterPlugin, {
+       compileStaticFiles: false
+   })
    .then(() => app.use(serverPlugin, {
         bsEnabled: true,
         injectScript: true,
@@ -125,7 +126,6 @@ Let`s say we want to build our static page.
 const Mangony = require(`mangony`);
 const jsx = require(`mangony`).plugins.jsxTemplaterPlugin;
 const app = new Mangony({
-    compileStaticFiles: false,
     cwd: `src`,
     dest: `dist/`
     types: {
@@ -159,7 +159,9 @@ const app = new Mangony({
 });
 
 app.render()
-    .then(() => app.use(jsxTemplaterPlugin));
+    .then(() => app.use(jsxTemplaterPlugin, {
+        compileStaticFiles: true,
+    }));
 ```
 
 Now you can find the complete rendered output in the destination folder.
