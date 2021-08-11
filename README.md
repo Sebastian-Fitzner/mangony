@@ -63,7 +63,7 @@ When using the default options your files get compiled. But you can also integra
 
 **dev.js**
 
-Let`s say we want to develop a new app with the dev server in place. 
+Let`s say we want to develop a new static page with the dev server in place. 
 
 ``` js
 const Mangony = require(`mangony`);
@@ -183,7 +183,7 @@ Path to your assets in your destination directory.
 
 - default: `[]`
 
-Add your own collections which can be used in YAML front matter.
+Add your own collections which can be used in YAML front matter or `filename.settings.hjson`.
 
 #### cwd
 

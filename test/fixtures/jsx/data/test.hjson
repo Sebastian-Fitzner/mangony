@@ -3,13 +3,15 @@
     "simple": {
       "variationName": "Simple",
       props: {
-        "text": "text"
+        "text": "text",
+        "src": "https://images.photowall.com/products/60869/azores-mountain-landscape-1.jpg"
       }
     },
     "advanced": {
       "variationName": "Advanced",
       props: {
-        "text": "test text 2"
+        "text": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+        "src":  "https://cdn.pixabay.com/photo/2019/12/11/21/18/landscape-4689328_960_720.jpg"
       }
     },
   }

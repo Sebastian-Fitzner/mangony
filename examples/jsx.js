@@ -8,7 +8,7 @@ const ReactDomServer = require('react-dom/server');
 var mangony = new Mangony({
 	cwd: 'test/fixtures/jsx',
 	dest: 'test/expected/jsx',
-	exportData: true,
+	exportData: false,
 	ext: '.html',
 	flatten: true,
 	collections: [
