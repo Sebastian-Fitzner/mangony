@@ -2,6 +2,9 @@
   "variations": {
     "simple": {
       "variationName": "Simple",
+      "docsSettings": {
+        "bgColor": "#333"
+      },
       props: {
         "text": "text",
         "src": "https://images.photowall.com/products/60869/azores-mountain-landscape-1.jpg"
