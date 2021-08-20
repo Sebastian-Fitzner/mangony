@@ -271,6 +271,8 @@ Just enable the internal watching of file changes.
 The dev server is providing the best developer experience by triggering a reload when a file has changed and supporting the rendering of only requested files. 
 That means, even when your project is growing in terms of pages and components it almost does not matter because only changed files get recompiled and rendered. 
 
+When the server is registered, it sets `servermode` in your `root` context to `true`. This is helpful if you want to distinguish between static or server related executions.  
+
 #### Options
 
 ##### devServer.bs
