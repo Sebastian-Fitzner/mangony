@@ -1,13 +1,14 @@
-var Mangony = require('./index');
-var TemplaterPlugin = require('./index').plugins.hbsTemplaterPlugin;
-var ServerPlugin = require('./index').plugins.serverPlugin;
+var Mangony = require('../index');
+var TemplaterPlugin = require('../lib/plugins/jsx-templater');
+var ServerPlugin = require('../index').plugins.serverPlugin;
 var express = require('express');
+const React = require('react');
+const ReactDomServer = require('react-dom/server');
 
 var mangony = new Mangony({
-	cwd: 'test/fixtures/hbs',
-	dest: 'test/expected/hbs',
-	generatePagesByFile: 'pages',
-	exportData: true,
+	cwd: 'test/fixtures/jsx',
+	dest: 'test/expected/jsx',
+	exportData: false,
 	ext: '.html',
 	flatten: true,
 	collections: [
@@ -22,22 +23,23 @@ var mangony = new Mangony({
 			]
 		},
 		pages: {
-			dir: 'pages',
+			dir: '',
 			files: [
-				'**/*.hbs',
-				'**/*.md'
-			]
-		},
-		partials: {
-			dir: 'partials',
-			files: [
-				'**/*.hbs'
+				'pages/**/*.jsx',
+				'partials/**/*.jsx'
 			]
 		},
 		layouts: {
 			dir: 'layouts',
 			files: [
-				'**/*.hbs'
+				'**/*.tsx'
+			]
+		},
+		partials: {
+			dir: 'partials',
+			files: [
+				'**/*.tsx',
+				'**/*.jsx'
 			]
 		}
 	},
@@ -46,14 +48,7 @@ var mangony = new Mangony({
 
 mangony.render()
 	.then(() => mangony.use(TemplaterPlugin, {
-		helpers: [
-			'test/fixtures/helpers/*.js'
-		],
 		compileStaticFiles: false,
-		allow: {
-			YFMContextData: true,
-			YFMLayout: true
-		},
 	}))
 	.then(() => mangony.use(ServerPlugin, {
 		express: express(),

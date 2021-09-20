@@ -1,13 +1,9 @@
-var Mangony = require('./index');
-var TemplaterPlugin = require('./index').plugins.ftlTemplaterPlugin;
-var ServerPlugin = require('./index').plugins.serverPlugin;
+var Mangony = require('../index');
+var TemplaterPlugin = require('../index').plugins.ftlTemplaterPlugin;
+var ServerPlugin = require('../index').plugins.serverPlugin;
 var express = require('express');
 
 var mangony = new Mangony({
-	allow: {
-		YFMContextData: true,
-		YFMLayout: true
-	},
 	cwd: 'test/fixtures/ftl',
 	dest: 'test/expected/ftl',
 	exportData: false,
@@ -44,12 +40,17 @@ var mangony = new Mangony({
 			]
 		}
 	},
-	watch: true,
-	compileStaticFiles: false
+	watch: true
 });
 
 mangony.render()
-	.then(() => mangony.use(TemplaterPlugin))
+	.then(() => mangony.use(TemplaterPlugin, {
+		allow: {
+			YFMContextData: true,
+			YFMLayout: true
+		},
+		compileStaticFiles: false,
+	}))
 	.then(() => mangony.use(ServerPlugin, {
 		express: express(),
 		logSnippet: false,

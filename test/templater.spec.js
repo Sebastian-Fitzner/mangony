@@ -7,12 +7,7 @@ var Handlebars = require('handlebars');
 var expect = chai.expect;
 var Mangony = require('../index');
 const templaterPlugin = require('../lib/plugins/hbs-templater');
-var options = require('./support/options-factory')({
-	allow: {
-		YFMLayout: true,
-		YFMContextData: true
-	}
-});
+var options = require('./support/options-factory')();
 var app;
 
 describe('mangony.templater', function () {
