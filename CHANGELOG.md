@@ -1,3 +1,10 @@
+### v2.0.0-alpha-10
+- Add JSX Templating support (React/Preact)
+
+### v2.0.0-alpha
+- Add plugin system
+- Support different template engines like freemarker, handlebars and more
+
 ### v1.4.0
 - Add browser-sync as option. 
 
