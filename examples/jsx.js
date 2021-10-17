@@ -8,7 +8,7 @@ const ReactDomServer = require('react-dom/server');
 var mangony = new Mangony({
 	cwd: 'test/fixtures/jsx',
 	dest: 'test/expected/jsx',
-	exportData: false,
+	exportData: true,
 	ext: '.html',
 	flatten: true,
 	collections: [
@@ -26,7 +26,10 @@ var mangony = new Mangony({
 			dir: '',
 			files: [
 				'pages/**/*.jsx',
-				'partials/**/*.jsx'
+				'partials/**/*.jsx',
+			],
+			ignore: [
+				'pages/**/*.ignored.jsx'
 			]
 		},
 		layouts: {
@@ -41,7 +44,11 @@ var mangony = new Mangony({
 				'**/*.tsx',
 				'**/*.jsx'
 			]
-		}
+		},
+		commons: {
+			dir: 'commons',
+			files: ['**/*.ts'],
+		},
 	},
 	watch: true
 });

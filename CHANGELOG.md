@@ -1,3 +1,8 @@
+### v2.0.0-alpha-12
+- Add ignore support
+- Remove buffer from cache
+- Replace multi-glob with globby
+
 ### v2.0.0-alpha-10
 - Add JSX Templating support (React/Preact)
 
