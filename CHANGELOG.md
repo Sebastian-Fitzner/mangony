@@ -1,3 +1,6 @@
+### v2.0.0-alpha-13
+- Add type definitions for TS projects
+
 ### v2.0.0-alpha-12
 - Add ignore support
 - Remove buffer from cache
