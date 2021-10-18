@@ -26,12 +26,14 @@ export type Collection = {
 }
 
 export type Root<D> = {
+    assets: string;
+    currentPage: Type<D>;
     servermode: boolean;
     __repository: Record<string, string[]>;
     __layouts: Record<string, Type<D>>;
     __partials: Record<string, Type<D>>;
     pages: Record<string, Type<D>>;
-    collections: Record<string, Collection>;
+    collections: Record<string, Record<string, Collection>>;
     [dataKey: string]: unknown;
 }
 
@@ -49,5 +51,5 @@ export type ContextVariation = {
     variationName: string;
     variationDescription?: string;
     docsSettings?: Record<string, unknown>;
-    props: unknown;
+    props: Record<string, unknown>;
 }
