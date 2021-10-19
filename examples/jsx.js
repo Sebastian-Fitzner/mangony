@@ -29,7 +29,9 @@ var mangony = new Mangony({
 				'partials/**/*.jsx',
 			],
 			ignore: [
-				'pages/**/*.ignored.jsx'
+				'pages/**/*.ignored.jsx',
+				'partials/**/bricks/**/*',
+				'partials/**/__tests__/**/*'
 			]
 		},
 		layouts: {

@@ -1,13 +1,14 @@
 {
-    "servermode": false,
+    "servermode": true,
     "__repository": {
         "data": [
-            "test.settings",
+            "home.settings",
             "test",
-            "home.settings"
+            "test.settings"
         ],
         "partials": [
-            "test"
+            "test",
+            "test-brick"
         ],
         "layouts": [
             "docs",
@@ -73,7 +74,14 @@
         }
     },
     "collections": {
-        "sitemap": {},
+        "sitemap": {
+            "test": {
+                "name": "test",
+                "files": [
+                    "partials/test"
+                ]
+            }
+        },
         "components": {}
     },
     "__partials": {
@@ -100,6 +108,27 @@
                     "publish": true,
                     "sitemap": "test"
                 },
+                "isEmpty": false,
+                "excerpt": ""
+            }
+        },
+        "test-brick": {
+            "id": "test-brick",
+            "assets": "./",
+            "ext": ".html",
+            "srcExt": ".jsx",
+            "type": "partials",
+            "basename": "test-brick.jsx",
+            "filename": "test-brick",
+            "dirname": "test/fixtures/jsx/partials/bricks",
+            "destDir": "test/expected/jsx/",
+            "destSubDir": "bricks",
+            "destFile": "test-brick.html",
+            "serverFile": "test-brick",
+            "raw": "function TestBrick() {\n}\n",
+            "parsed": {
+                "content": "function TestBrick() {\n}\n",
+                "data": {},
                 "isEmpty": false,
                 "excerpt": ""
             }
@@ -150,12 +179,8 @@
         }
     },
     "__commons": {},
-    "test.settings": {
-        "testPartial": "test title 2",
-        "contextData": "test",
-        "layout": "docs",
-        "publish": true,
-        "sitemap": "test"
+    "home.settings": {
+        "layout": "lyt-default"
     },
     "test": {
         "variations": {
@@ -178,7 +203,11 @@
             }
         }
     },
-    "home.settings": {
-        "layout": "lyt-default"
+    "test.settings": {
+        "testPartial": "test title 2",
+        "contextData": "test",
+        "layout": "docs",
+        "publish": true,
+        "sitemap": "test"
     }
 }
