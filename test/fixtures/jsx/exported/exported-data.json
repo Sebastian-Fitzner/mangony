@@ -8,7 +8,8 @@
         ],
         "partials": [
             "test",
-            "test-brick"
+            "test-brick",
+            "test-brick-in-brick"
         ],
         "layouts": [
             "docs",
@@ -34,13 +35,11 @@
             "destSubDir": "partials",
             "destFile": "test.html",
             "serverFile": "test",
-            "raw": "import React from 'react';\n\nexport default function Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n",
+            "raw": "import React from 'react';\nimport TestBrick from './bricks/test-brick'\nimport withLayoutDocs, { getStaticProps } from \"../layouts/docs\";\n\nexport {\n\tgetStaticProps\n}\n\nfunction Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<TestBrick />\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n\nexport default withLayoutDocs(Test);\n",
             "parsed": {
-                "content": "import React from 'react';\n\nexport default function Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n",
+                "content": "import React from 'react';\nimport TestBrick from './bricks/test-brick'\nimport withLayoutDocs, { getStaticProps } from \"../layouts/docs\";\n\nexport {\n\tgetStaticProps\n}\n\nfunction Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<TestBrick />\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n\nexport default withLayoutDocs(Test);\n",
                 "data": {
                     "testPartial": "test title 2",
-                    "contextData": "test",
-                    "layout": "docs",
                     "publish": true,
                     "sitemap": "test"
                 },
@@ -98,13 +97,11 @@
             "destSubDir": "",
             "destFile": "test.html",
             "serverFile": "test",
-            "raw": "import React from 'react';\n\nexport default function Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n",
+            "raw": "import React from 'react';\nimport TestBrick from './bricks/test-brick'\nimport withLayoutDocs, { getStaticProps } from \"../layouts/docs\";\n\nexport {\n\tgetStaticProps\n}\n\nfunction Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<TestBrick />\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n\nexport default withLayoutDocs(Test);\n",
             "parsed": {
-                "content": "import React from 'react';\n\nexport default function Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n",
+                "content": "import React from 'react';\nimport TestBrick from './bricks/test-brick'\nimport withLayoutDocs, { getStaticProps } from \"../layouts/docs\";\n\nexport {\n\tgetStaticProps\n}\n\nfunction Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<TestBrick />\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n\nexport default withLayoutDocs(Test);\n",
                 "data": {
                     "testPartial": "test title 2",
-                    "contextData": "test",
-                    "layout": "docs",
                     "publish": true,
                     "sitemap": "test"
                 },
@@ -125,12 +122,34 @@
             "destSubDir": "bricks",
             "destFile": "test-brick.html",
             "serverFile": "test-brick",
-            "raw": "function TestBrick() {\n}\n",
+            "raw": "import React from 'react';\nimport TestBrickInBrick from \"./test-brick-in-brick\";\n\nexport default function TestBrick() {\n    return (\n        <div>\n            <h4>brick in general</h4>\n\n            <TestBrickInBrick />\n        </div>\n    )\n}\n",
             "parsed": {
-                "content": "function TestBrick() {\n}\n",
+                "content": "import React from 'react';\nimport TestBrickInBrick from \"./test-brick-in-brick\";\n\nexport default function TestBrick() {\n    return (\n        <div>\n            <h4>brick in general</h4>\n\n            <TestBrickInBrick />\n        </div>\n    )\n}\n",
                 "data": {},
                 "isEmpty": false,
                 "excerpt": ""
+            }
+        },
+        "test-brick-in-brick": {
+            "id": "test-brick-in-brick",
+            "assets": "./",
+            "ext": ".html",
+            "srcExt": ".jsx",
+            "type": "partials",
+            "basename": "test-brick-in-brick.jsx",
+            "filename": "test-brick-in-brick",
+            "dirname": "test/fixtures/jsx/partials/bricks",
+            "destDir": "test/expected/jsx/",
+            "destSubDir": "bricks",
+            "destFile": "test-brick-in-brick.html",
+            "serverFile": "test-brick-in-brick",
+            "raw": "import React from 'react';\n\nexport default function TestBrickInBrick() {\n    return (\n        <div>brick in brick</div>\n    )\n}\n",
+            "parsed": {
+                "content": "import React from 'react';\n\nexport default function TestBrickInBrick() {\n    return (\n        <div>brick in brick</div>\n    )\n}\n",
+                "data": {},
+                "isEmpty": false,
+                "excerpt": "",
+                "orig": null
             }
         }
     },
@@ -148,9 +167,9 @@
             "destSubDir": "",
             "destFile": "docs.html",
             "serverFile": "docs",
-            "raw": "import * as fs from 'fs';\nimport React, { Fragment } from 'react';\nimport LytDefault from './lyt-default';\n\nfunction withLayoutDocs(cmp) {\n    return LytDefault(({ root, context }) => {\n        const dirname = root.currentPage.dirname;\n        const readme = fs.readFileSync(`${dirname}/README.md`, 'utf-8');\n\n        return (\n            <Fragment>\n                <h1>Docs</h1>\n                {readme}\n                {\n                    Object.values(context.variations).map((variation, idx) => {\n                        return (\n                            <div key={idx}>\n                                { variation.variationName &&\n                                    (<h2>Variation: {variation.variationName}</h2>)\n                                }\n                                { cmp({ ...variation.props}) }\n                            </div>\n                        )\n                    })\n                }\n            </Fragment>\n        )\n    })\n}\n\nexport default withLayoutDocs;\n",
+            "raw": "import * as fs from 'fs';\nimport React, { Fragment } from 'react';\nimport LytDefault from './lyt-default';\n\nexport const getStaticProps = async () => {\n    console.log('get static: ');\n    return Promise.resolve({\n        test: 'test'\n    })\n}\n\nfunction withLayoutDocs(cmp) {\n    return LytDefault(({ root, context }) => {\n        const dirname = root.currentPage.dirname;\n        const readme = fs.readFileSync(`${dirname}/README.md`, 'utf-8');\n\n        return (\n            <Fragment>\n                <h1>Docs</h1>\n                {readme}\n                {\n                    Object.values(context.variations).map((variation, idx) => {\n                        return (\n                            <div key={idx}>\n                                { variation.variationName &&\n                                    (<h2>Variation: {variation.variationName}</h2>)\n                                }\n                                { cmp({ ...variation.props}) }\n                            </div>\n                        )\n                    })\n                }\n            </Fragment>\n        )\n    })\n}\n\nexport default withLayoutDocs;\n",
             "parsed": {
-                "content": "import * as fs from 'fs';\nimport React, { Fragment } from 'react';\nimport LytDefault from './lyt-default';\n\nfunction withLayoutDocs(cmp) {\n    return LytDefault(({ root, context }) => {\n        const dirname = root.currentPage.dirname;\n        const readme = fs.readFileSync(`${dirname}/README.md`, 'utf-8');\n\n        return (\n            <Fragment>\n                <h1>Docs</h1>\n                {readme}\n                {\n                    Object.values(context.variations).map((variation, idx) => {\n                        return (\n                            <div key={idx}>\n                                { variation.variationName &&\n                                    (<h2>Variation: {variation.variationName}</h2>)\n                                }\n                                { cmp({ ...variation.props}) }\n                            </div>\n                        )\n                    })\n                }\n            </Fragment>\n        )\n    })\n}\n\nexport default withLayoutDocs;\n",
+                "content": "import * as fs from 'fs';\nimport React, { Fragment } from 'react';\nimport LytDefault from './lyt-default';\n\nexport const getStaticProps = async () => {\n    console.log('get static: ');\n    return Promise.resolve({\n        test: 'test'\n    })\n}\n\nfunction withLayoutDocs(cmp) {\n    return LytDefault(({ root, context }) => {\n        const dirname = root.currentPage.dirname;\n        const readme = fs.readFileSync(`${dirname}/README.md`, 'utf-8');\n\n        return (\n            <Fragment>\n                <h1>Docs</h1>\n                {readme}\n                {\n                    Object.values(context.variations).map((variation, idx) => {\n                        return (\n                            <div key={idx}>\n                                { variation.variationName &&\n                                    (<h2>Variation: {variation.variationName}</h2>)\n                                }\n                                { cmp({ ...variation.props}) }\n                            </div>\n                        )\n                    })\n                }\n            </Fragment>\n        )\n    })\n}\n\nexport default withLayoutDocs;\n",
                 "data": {},
                 "isEmpty": false,
                 "excerpt": ""
@@ -206,7 +225,6 @@
     "test.settings": {
         "testPartial": "test title 2",
         "contextData": "test",
-        "layout": "docs",
         "publish": true,
         "sitemap": "test"
     }

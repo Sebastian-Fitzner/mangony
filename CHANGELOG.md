@@ -1,3 +1,7 @@
+### v2.0.0-alpha-16
+- Change jsx templater to bundle pages instead of compiling each file
+- Ignore layouts in settings file for jsx
+
 ### v2.0.0-alpha-15
 - Improve watcher logic for directory checks
 

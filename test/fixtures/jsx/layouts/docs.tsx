@@ -2,6 +2,13 @@ import * as fs from 'fs';
 import React, { Fragment } from 'react';
 import LytDefault from './lyt-default';
 
+export const getStaticProps = async () => {
+    console.log('get static: ');
+    return Promise.resolve({
+        test: 'test'
+    })
+}
+
 function withLayoutDocs(cmp) {
     return LytDefault(({ root, context }) => {
         const dirname = root.currentPage.dirname;

@@ -1,5 +1,9 @@
 {
     "/Users/sfitzner/projects/mangony/mangony/test/fixtures/jsx/partials": [
         "test.jsx"
+    ],
+    "/Users/sfitzner/projects/mangony/mangony/test/fixtures/jsx/partials/bricks": [
+        "test-brick-in-brick.jsx",
+        "test-brick.jsx"
     ]
 }
