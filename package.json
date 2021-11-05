@@ -1,6 +1,6 @@
 {
 	"name": "mangony",
-	"version": "2.0.0-alpha17",
+	"version": "2.0.0-alpha18",
 	"description": "Yet another static site generator in NodeJS focussed on being fast and simple. Mangony fulfills just one task: It takes templates (like handlebars or jsx) and compiles them to an output directory.",
 	"main": "index.js",
 	"scripts": {
@@ -45,7 +45,7 @@
 		"chokidar": "^3.5.2",
 		"connect-browser-sync": "^2.1.0",
 		"deep-extend": "~0.6.0",
-		"esbuild": "^0.12.26",
+		"esbuild": "^0.13.12",
 		"express": "~4.17.1",
 		"freemarker.js": "^1.4.0",
 		"fs-extra": "^10.0.0",
@@ -53,7 +53,7 @@
 		"globby": "^11.0.4",
 		"gray-matter": "^4.0.3",
 		"handlebars": "^4.7.7",
-		"handlebars-helpers": "^0.9.8",
+		"handlebars-helpers": "^0.10.0",
 		"handlebars-layouts": "~3.1.4",
 		"hjson": "~3.2.2",
 		"mangony-hbs-helper-wrap-with": "~0.0.8",
