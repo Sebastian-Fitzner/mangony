@@ -9,8 +9,9 @@ var mangony = new Mangony({
 	cwd: 'test/fixtures/jsx',
 	dest: 'test/expected/jsx',
 	exportData: true,
+	assets: './public',
 	ext: '.html',
-	flatten: true,
+	flatten: false,
 	collections: [
 		'sitemap', 'components'
 	],

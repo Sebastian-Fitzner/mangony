@@ -12,8 +12,8 @@
             "test-brick"
         ],
         "layouts": [
-            "lyt-default",
-            "docs"
+            "docs",
+            "lyt-default"
         ],
         "pages": [
             "partials/test",
@@ -24,7 +24,8 @@
     "pages": {
         "partials/test": {
             "id": "partials/test",
-            "assets": "./",
+            "assets": "../public/",
+            "relativeToBasePath": "../",
             "ext": ".html",
             "srcExt": ".jsx",
             "type": "pages",
@@ -33,8 +34,8 @@
             "dirname": "test/fixtures/jsx/partials",
             "destDir": "test/expected/jsx/",
             "destSubDir": "partials",
-            "destFile": "test.html",
-            "serverFile": "test",
+            "destFile": "partials/test.html",
+            "serverFile": "partials/test",
             "raw": "import React from 'react';\nimport TestBrick from './bricks/test-brick'\nimport withLayoutDocs, { getStaticProps } from \"../layouts/docs\";\n\nexport {\n\tgetStaticProps\n}\n\nfunction Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<TestBrick />\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n\nexport default withLayoutDocs(Test);\n",
             "parsed": {
                 "content": "import React from 'react';\nimport TestBrick from './bricks/test-brick'\nimport withLayoutDocs, { getStaticProps } from \"../layouts/docs\";\n\nexport {\n\tgetStaticProps\n}\n\nfunction Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<TestBrick />\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n\nexport default withLayoutDocs(Test);\n",
@@ -51,7 +52,8 @@
         },
         "pages/home": {
             "id": "pages/home",
-            "assets": "./",
+            "assets": "../public/",
+            "relativeToBasePath": "../",
             "ext": ".html",
             "srcExt": ".jsx",
             "type": "pages",
@@ -60,8 +62,8 @@
             "dirname": "test/fixtures/jsx/pages",
             "destDir": "test/expected/jsx/",
             "destSubDir": "pages",
-            "destFile": "home.html",
-            "serverFile": "home",
+            "destFile": "pages/home.html",
+            "serverFile": "pages/home",
             "raw": "import React from 'react';\nimport Test from '../partials/test';\n\nfunction Home() {\n    return (\n        <div className='test'>\n            Home Page is working ...\n            <Test\n                text={'... with some text'}\n                src={'https://www.seekpng.com/png/detail/263-2630215_web-design-programming-courses-in-london-java.png'} />\n        </div>\n    )\n}\n\nexport default Home;\n",
             "parsed": {
                 "content": "import React from 'react';\nimport Test from '../partials/test';\n\nfunction Home() {\n    return (\n        <div className='test'>\n            Home Page is working ...\n            <Test\n                text={'... with some text'}\n                src={'https://www.seekpng.com/png/detail/263-2630215_web-design-programming-courses-in-london-java.png'} />\n        </div>\n    )\n}\n\nexport default Home;\n",
@@ -74,20 +76,14 @@
         }
     },
     "collections": {
-        "sitemap": {
-            "test": {
-                "name": "test",
-                "files": [
-                    "partials/test"
-                ]
-            }
-        },
+        "sitemap": {},
         "components": {}
     },
     "__partials": {
         "test": {
             "id": "test",
-            "assets": "./",
+            "assets": "public/",
+            "relativeToBasePath": "/",
             "ext": ".html",
             "srcExt": ".jsx",
             "type": "partials",
@@ -113,7 +109,8 @@
         },
         "test-brick-in-brick": {
             "id": "test-brick-in-brick",
-            "assets": "./",
+            "assets": "../public/",
+            "relativeToBasePath": "../",
             "ext": ".html",
             "srcExt": ".jsx",
             "type": "partials",
@@ -122,8 +119,8 @@
             "dirname": "test/fixtures/jsx/partials/bricks",
             "destDir": "test/expected/jsx/",
             "destSubDir": "bricks",
-            "destFile": "test-brick-in-brick.html",
-            "serverFile": "test-brick-in-brick",
+            "destFile": "bricks/test-brick-in-brick.html",
+            "serverFile": "bricks/test-brick-in-brick",
             "raw": "import React from 'react';\n\nexport default function TestBrickInBrick() {\n    return (\n        <div>brick in brick</div>\n    )\n}\n",
             "parsed": {
                 "content": "import React from 'react';\n\nexport default function TestBrickInBrick() {\n    return (\n        <div>brick in brick</div>\n    )\n}\n",
@@ -134,7 +131,8 @@
         },
         "test-brick": {
             "id": "test-brick",
-            "assets": "./",
+            "assets": "../public/",
+            "relativeToBasePath": "../",
             "ext": ".html",
             "srcExt": ".jsx",
             "type": "partials",
@@ -143,8 +141,8 @@
             "dirname": "test/fixtures/jsx/partials/bricks",
             "destDir": "test/expected/jsx/",
             "destSubDir": "bricks",
-            "destFile": "test-brick.html",
-            "serverFile": "test-brick",
+            "destFile": "bricks/test-brick.html",
+            "serverFile": "bricks/test-brick",
             "raw": "import React from 'react';\nimport TestBrickInBrick from \"./test-brick-in-brick\";\n\nexport default function TestBrick() {\n    return (\n        <div>\n            <h4>brick in general</h4>\n\n            <TestBrickInBrick />\n        </div>\n    )\n}\n",
             "parsed": {
                 "content": "import React from 'react';\nimport TestBrickInBrick from \"./test-brick-in-brick\";\n\nexport default function TestBrick() {\n    return (\n        <div>\n            <h4>brick in general</h4>\n\n            <TestBrickInBrick />\n        </div>\n    )\n}\n",
@@ -155,30 +153,10 @@
         }
     },
     "__layouts": {
-        "lyt-default": {
-            "id": "lyt-default",
-            "assets": "./",
-            "ext": ".html",
-            "srcExt": ".tsx",
-            "type": "layouts",
-            "basename": "lyt-default.tsx",
-            "filename": "lyt-default",
-            "dirname": "test/fixtures/jsx/layouts",
-            "destDir": "test/expected/jsx/",
-            "destSubDir": "",
-            "destFile": "lyt-default.html",
-            "serverFile": "lyt-default",
-            "raw": "import React from 'react';\n\nconst headerStyles = {\n    borderBottom: '1px solid #ccc',\n    marginBottom: '2rem',\n    paddingBottom: '1rem'\n};\nconst stageStyles = {\n    backgroundColor: 'f3f3f3',\n    height: '250px',\n    margin: '1rem 0',\n    padding: '1rem'\n}\nconst footerStyles = {\n    borderTop: '1px solid #ccc',\n    marginTop: '2rem',\n    paddingTop: '.5rem'\n};\n\nexport default function LytDefault(cmp) {\n    return (props) => {\n        return (\n            <html lang=\"en\">\n            <head>\n                <meta charSet=\"UTF-8\"/>\n                <meta name=\"viewport\"\n                      content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"/>\n                <meta httpEquiv=\"X-UA-Compatible\" content=\"ie=edge\"/>\n                <title>Layouts with Mangony and React</title>\n            </head>\n            <body>\n            <header style={headerStyles}>\n                <h1>Mangony (P)React Renderer</h1>\n            </header>\n            <section style={stageStyles}>\n                stage\n            </section>\n            <main id={'main'}>\n                {cmp(props)}\n            </main>\n            <footer style={footerStyles}><h3>footer</h3></footer>\n            </body>\n            </html>\n        )\n    }\n}\n",
-            "parsed": {
-                "content": "import React from 'react';\n\nconst headerStyles = {\n    borderBottom: '1px solid #ccc',\n    marginBottom: '2rem',\n    paddingBottom: '1rem'\n};\nconst stageStyles = {\n    backgroundColor: 'f3f3f3',\n    height: '250px',\n    margin: '1rem 0',\n    padding: '1rem'\n}\nconst footerStyles = {\n    borderTop: '1px solid #ccc',\n    marginTop: '2rem',\n    paddingTop: '.5rem'\n};\n\nexport default function LytDefault(cmp) {\n    return (props) => {\n        return (\n            <html lang=\"en\">\n            <head>\n                <meta charSet=\"UTF-8\"/>\n                <meta name=\"viewport\"\n                      content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"/>\n                <meta httpEquiv=\"X-UA-Compatible\" content=\"ie=edge\"/>\n                <title>Layouts with Mangony and React</title>\n            </head>\n            <body>\n            <header style={headerStyles}>\n                <h1>Mangony (P)React Renderer</h1>\n            </header>\n            <section style={stageStyles}>\n                stage\n            </section>\n            <main id={'main'}>\n                {cmp(props)}\n            </main>\n            <footer style={footerStyles}><h3>footer</h3></footer>\n            </body>\n            </html>\n        )\n    }\n}\n",
-                "data": {},
-                "isEmpty": false,
-                "excerpt": ""
-            }
-        },
         "docs": {
             "id": "docs",
-            "assets": "./",
+            "assets": "public/",
+            "relativeToBasePath": "/",
             "ext": ".html",
             "srcExt": ".tsx",
             "type": "layouts",
@@ -192,6 +170,28 @@
             "raw": "import * as fs from 'fs';\nimport React, { Fragment } from 'react';\nimport LytDefault from './lyt-default';\n\nexport const getStaticProps = async () => {\n    console.log('get static: ');\n    return Promise.resolve({\n        test: 'test'\n    })\n}\n\nfunction withLayoutDocs(cmp) {\n    return LytDefault(({ root, context }) => {\n        const dirname = root.currentPage.dirname;\n        const readme = fs.readFileSync(`${dirname}/README.md`, 'utf-8');\n\n        return (\n            <Fragment>\n                <h1>Docs</h1>\n                {readme}\n                {\n                    Object.values(context.variations).map((variation, idx) => {\n                        return (\n                            <div key={idx}>\n                                { variation.variationName &&\n                                    (<h2>Variation: {variation.variationName}</h2>)\n                                }\n                                { cmp({ ...variation.props}) }\n                            </div>\n                        )\n                    })\n                }\n            </Fragment>\n        )\n    })\n}\n\nexport default withLayoutDocs;\n",
             "parsed": {
                 "content": "import * as fs from 'fs';\nimport React, { Fragment } from 'react';\nimport LytDefault from './lyt-default';\n\nexport const getStaticProps = async () => {\n    console.log('get static: ');\n    return Promise.resolve({\n        test: 'test'\n    })\n}\n\nfunction withLayoutDocs(cmp) {\n    return LytDefault(({ root, context }) => {\n        const dirname = root.currentPage.dirname;\n        const readme = fs.readFileSync(`${dirname}/README.md`, 'utf-8');\n\n        return (\n            <Fragment>\n                <h1>Docs</h1>\n                {readme}\n                {\n                    Object.values(context.variations).map((variation, idx) => {\n                        return (\n                            <div key={idx}>\n                                { variation.variationName &&\n                                    (<h2>Variation: {variation.variationName}</h2>)\n                                }\n                                { cmp({ ...variation.props}) }\n                            </div>\n                        )\n                    })\n                }\n            </Fragment>\n        )\n    })\n}\n\nexport default withLayoutDocs;\n",
+                "data": {},
+                "isEmpty": false,
+                "excerpt": ""
+            }
+        },
+        "lyt-default": {
+            "id": "lyt-default",
+            "assets": "public/",
+            "relativeToBasePath": "/",
+            "ext": ".html",
+            "srcExt": ".tsx",
+            "type": "layouts",
+            "basename": "lyt-default.tsx",
+            "filename": "lyt-default",
+            "dirname": "test/fixtures/jsx/layouts",
+            "destDir": "test/expected/jsx/",
+            "destSubDir": "",
+            "destFile": "lyt-default.html",
+            "serverFile": "lyt-default",
+            "raw": "import React from 'react';\n\nconst headerStyles = {\n    borderBottom: '1px solid #ccc',\n    marginBottom: '2rem',\n    paddingBottom: '1rem'\n};\nconst stageStyles = {\n    backgroundColor: 'f3f3f3',\n    height: '250px',\n    margin: '1rem 0',\n    padding: '1rem'\n}\nconst footerStyles = {\n    borderTop: '1px solid #ccc',\n    marginTop: '2rem',\n    paddingTop: '.5rem'\n};\n\nexport default function LytDefault(cmp) {\n    return (props) => {\n        return (\n            <html lang=\"en\">\n            <head>\n                <meta charSet=\"UTF-8\"/>\n                <meta name=\"viewport\"\n                      content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"/>\n                <meta httpEquiv=\"X-UA-Compatible\" content=\"ie=edge\"/>\n                <title>Layouts with Mangony and React</title>\n            </head>\n            <body>\n            <header style={headerStyles}>\n                <h1>Mangony (P)React Renderer</h1>\n            </header>\n            <section style={stageStyles}>\n                stage\n            </section>\n            <main id={'main'}>\n                {cmp(props)}\n            </main>\n            <footer style={footerStyles}><h3>footer</h3></footer>\n            </body>\n            </html>\n        )\n    }\n}\n",
+            "parsed": {
+                "content": "import React from 'react';\n\nconst headerStyles = {\n    borderBottom: '1px solid #ccc',\n    marginBottom: '2rem',\n    paddingBottom: '1rem'\n};\nconst stageStyles = {\n    backgroundColor: 'f3f3f3',\n    height: '250px',\n    margin: '1rem 0',\n    padding: '1rem'\n}\nconst footerStyles = {\n    borderTop: '1px solid #ccc',\n    marginTop: '2rem',\n    paddingTop: '.5rem'\n};\n\nexport default function LytDefault(cmp) {\n    return (props) => {\n        return (\n            <html lang=\"en\">\n            <head>\n                <meta charSet=\"UTF-8\"/>\n                <meta name=\"viewport\"\n                      content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"/>\n                <meta httpEquiv=\"X-UA-Compatible\" content=\"ie=edge\"/>\n                <title>Layouts with Mangony and React</title>\n            </head>\n            <body>\n            <header style={headerStyles}>\n                <h1>Mangony (P)React Renderer</h1>\n            </header>\n            <section style={stageStyles}>\n                stage\n            </section>\n            <main id={'main'}>\n                {cmp(props)}\n            </main>\n            <footer style={footerStyles}><h3>footer</h3></footer>\n            </body>\n            </html>\n        )\n    }\n}\n",
                 "data": {},
                 "isEmpty": false,
                 "excerpt": ""
