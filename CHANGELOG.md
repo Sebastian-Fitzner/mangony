@@ -1,3 +1,6 @@
+### v2.0.0-alpha-20
+- Add relateiveToBasePath support for pages
+
 ### v2.0.0-alpha-16
 - Change jsx templater to bundle pages instead of compiling each file
 - Ignore layouts in settings file for jsx

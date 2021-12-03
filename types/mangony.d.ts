@@ -1,6 +1,7 @@
 export type Type<D> = {
     id: string;
     assets: string;
+    relativeToBasePath: string;
     ext: string;
     srcExt: string;
     type: 'pages' | 'layouts' | 'partials' | 'commons' | unknown,
