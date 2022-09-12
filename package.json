@@ -1,73 +1,75 @@
 {
-	"name": "mangony",
-	"version": "2.0.0-alpha21",
-	"description": "Yet another static site generator in NodeJS focussed on being fast and simple. Mangony fulfills just one task: It takes templates (like handlebars or jsx) and compiles them to an output directory.",
-	"main": "index.js",
-	"scripts": {
-		"test": "./node_modules/.bin/mocha --reporter spec"
-	},
-	"types": "./types/mangony.d.ts",
-	"keywords": [
-		"generator",
-		"Veams",
-		"react",
-		"react-static",
-		"handlebars",
-		"handlebars-layouts",
-		"templates",
-		"compiler",
-		"compile",
-		"render",
-		"Mangony",
-		"Grunt",
-		"markdown pages",
-		"static",
-		"sites",
-		"express",
-		"simple site generator",
-		"static site generator"
-	],
-	"license": "MIT",
-	"homepage": "https://github.com/Sebastian-Fitzner/mangony",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Sebastian-Fitzner/mangony.git"
-	},
-	"author": {
-		"name": "Sebastian Fitzner",
-		"email": "sebastian@veams.org",
-		"url": "mangony.org"
-	},
-	"dependencies": {
-		"bluebird": "~3.7.2",
-		"browser-sync": "^2.27.10",
-		"chalk": "^4.1.2",
-		"chokidar": "^3.5.3",
-		"connect-browser-sync": "^2.1.0",
-		"deep-extend": "~0.6.0",
-		"esbuild": "^0.15.7",
-		"express": "~4.18.1",
-		"freemarker.js": "^1.4.0",
-		"fs-extra": "^10.1.0",
-		"glob": "^7.2.0",
-		"globby": "^11.0.4",
-		"gray-matter": "^4.0.3",
-		"handlebars": "^4.7.7",
-		"handlebars-helpers": "^0.10.0",
-		"handlebars-layouts": "~3.1.4",
-		"hjson": "~3.2.2",
-		"mangony-hbs-helper-wrap-with": "~0.0.8",
-		"mangony-hbs-helpers": "^0.7.0",
-		"markdown-it": "^13.0.1",
-		"markdown-it-attrs": "^4.1.4",
-		"mkdirp": "~1.0.4",
-		"path": "~0.12.7"
-	},
-	"devDependencies": {
-		"chai": "^4.3.6",
-		"deepmerge": "^4.2.2",
-		"mocha": "^10.0.0",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	}
+  "name": "mangony",
+  "version": "2.0.0-alpha22",
+  "description": "Yet another static site generator in NodeJS focussed on being fast and simple. Mangony fulfills just one task: It takes templates (like handlebars or jsx) and compiles them to an output directory.",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "types": "./types/mangony.d.ts",
+  "keywords": [
+    "generator",
+    "Veams",
+    "react",
+    "react-static",
+    "handlebars",
+    "handlebars-layouts",
+    "templates",
+    "compiler",
+    "compile",
+    "render",
+    "Mangony",
+    "Grunt",
+    "markdown pages",
+    "static",
+    "sites",
+    "express",
+    "simple site generator",
+    "static site generator"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Sebastian-Fitzner/mangony",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sebastian-Fitzner/mangony.git"
+  },
+  "author": {
+    "name": "Sebastian Fitzner",
+    "email": "sebastian@veams.org",
+    "url": "mangony.org"
+  },
+  "dependencies": {
+    "bluebird": "~3.7.2",
+    "browser-sync": "^2.27.10",
+    "chalk": "^5.0.1",
+    "chokidar": "^3.5.3",
+    "connect-browser-sync": "^2.1.0",
+    "deep-extend": "~0.6.0",
+    "esbuild": "^0.15.7",
+    "express": "~4.18.1",
+    "freemarker.js": "^1.4.0",
+    "fs-extra": "^10.1.0",
+    "glob": "^8.0.3",
+    "globby": "^13.1.2",
+    "gray-matter": "^4.0.3",
+    "handlebars": "^4.7.7",
+    "handlebars-helpers": "^0.10.0",
+    "handlebars-layouts": "~3.1.4",
+    "hjson": "~3.2.2",
+    "mangony-hbs-helper-wrap-with": "~0.0.8",
+    "mangony-hbs-helpers": "^0.7.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-attrs": "^4.1.4",
+    "mkdirp": "~1.0.4",
+    "path": "~0.12.7"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "deepmerge": "^4.2.2",
+    "mocha": "^10.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }

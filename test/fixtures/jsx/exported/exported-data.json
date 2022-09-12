@@ -2,51 +2,27 @@
     "servermode": false,
     "__repository": {
         "data": [
-            "home.settings",
             "test.settings",
+            "home.settings",
             "test"
         ],
         "partials": [
+            "test",
             "test-brick-in-brick",
-            "test-brick",
-            "test"
+            "test-brick"
         ],
         "layouts": [
             "docs",
             "lyt-default"
         ],
         "pages": [
-            "pages/home",
             "partials/test",
+            "pages/home",
             "pages/deeply/nested/page"
         ],
         "commons": []
     },
     "pages": {
-        "pages/home": {
-            "id": "pages/home",
-            "assets": "../public/",
-            "relativeToBasePath": "../",
-            "ext": ".html",
-            "srcExt": ".jsx",
-            "type": "pages",
-            "basename": "home.jsx",
-            "filename": "home",
-            "dirname": "test/fixtures/jsx/pages",
-            "destDir": "test/expected/jsx/",
-            "destSubDir": "pages",
-            "destFile": "pages/home.html",
-            "serverFile": "pages/home",
-            "raw": "import React from 'react';\nimport Test from '../partials/test';\n\nfunction Home() {\n    return (\n        <div className='test'>\n            Home Page is working ...\n            <Test\n                text={'... with some text'}\n                src={'https://www.seekpng.com/png/detail/263-2630215_web-design-programming-courses-in-london-java.png'} />\n        </div>\n    )\n}\n\nexport default Home;\n",
-            "parsed": {
-                "content": "import React from 'react';\nimport Test from '../partials/test';\n\nfunction Home() {\n    return (\n        <div className='test'>\n            Home Page is working ...\n            <Test\n                text={'... with some text'}\n                src={'https://www.seekpng.com/png/detail/263-2630215_web-design-programming-courses-in-london-java.png'} />\n        </div>\n    )\n}\n\nexport default Home;\n",
-                "data": {
-                    "layout": "lyt-default"
-                },
-                "isEmpty": false,
-                "excerpt": ""
-            }
-        },
         "partials/test": {
             "id": "partials/test",
             "assets": "../public/",
@@ -75,6 +51,30 @@
                 "orig": null
             }
         },
+        "pages/home": {
+            "id": "pages/home",
+            "assets": "../public/",
+            "relativeToBasePath": "../",
+            "ext": ".html",
+            "srcExt": ".jsx",
+            "type": "pages",
+            "basename": "home.jsx",
+            "filename": "home",
+            "dirname": "test/fixtures/jsx/pages",
+            "destDir": "test/expected/jsx/",
+            "destSubDir": "pages",
+            "destFile": "pages/home.html",
+            "serverFile": "pages/home",
+            "raw": "import React from 'react';\nimport Test from '../partials/test';\n\nfunction Home() {\n    return (\n        <div className='test'>\n            Home Page is working ...\n            <Test\n                text={'... with some text'}\n                src={'https://www.seekpng.com/png/detail/263-2630215_web-design-programming-courses-in-london-java.png'} />\n        </div>\n    )\n}\n\nexport default Home;\n",
+            "parsed": {
+                "content": "import React from 'react';\nimport Test from '../partials/test';\n\nfunction Home() {\n    return (\n        <div className='test'>\n            Home Page is working ...\n            <Test\n                text={'... with some text'}\n                src={'https://www.seekpng.com/png/detail/263-2630215_web-design-programming-courses-in-london-java.png'} />\n        </div>\n    )\n}\n\nexport default Home;\n",
+                "data": {
+                    "layout": "lyt-default"
+                },
+                "isEmpty": false,
+                "excerpt": ""
+            }
+        },
         "pages/deeply/nested/page": {
             "id": "pages/deeply/nested/page",
             "assets": "../../../public/",
@@ -99,17 +99,37 @@
         }
     },
     "collections": {
-        "sitemap": {
-            "test": {
-                "name": "test",
-                "files": [
-                    "partials/test"
-                ]
-            }
-        },
+        "sitemap": {},
         "components": {}
     },
     "__partials": {
+        "test": {
+            "id": "test",
+            "assets": "public/",
+            "relativeToBasePath": "/",
+            "ext": ".html",
+            "srcExt": ".jsx",
+            "type": "partials",
+            "basename": "test.jsx",
+            "filename": "test",
+            "dirname": "test/fixtures/jsx/partials",
+            "destDir": "test/expected/jsx/",
+            "destSubDir": "",
+            "destFile": "test.html",
+            "serverFile": "test",
+            "raw": "import React from 'react';\nimport TestBrick from './bricks/test-brick';\n\nfunction Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<TestBrick />\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n\nexport default Test;\n",
+            "parsed": {
+                "content": "import React from 'react';\nimport TestBrick from './bricks/test-brick';\n\nfunction Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<TestBrick />\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n\nexport default Test;\n",
+                "data": {
+                    "testPartial": "test title 2",
+                    "contextData": "test",
+                    "publish": true,
+                    "sitemap": "test"
+                },
+                "isEmpty": false,
+                "excerpt": ""
+            }
+        },
         "test-brick-in-brick": {
             "id": "test-brick-in-brick",
             "assets": "../public/",
@@ -150,33 +170,6 @@
             "parsed": {
                 "content": "import React from 'react';\nimport TestBrickInBrick from \"./test-brick-in-brick\";\n\nexport default function TestBrick() {\n    return (\n        <div>\n            <h4>brick in general</h4>\n\n            <TestBrickInBrick />\n        </div>\n    )\n}\n",
                 "data": {},
-                "isEmpty": false,
-                "excerpt": ""
-            }
-        },
-        "test": {
-            "id": "test",
-            "assets": "public/",
-            "relativeToBasePath": "/",
-            "ext": ".html",
-            "srcExt": ".jsx",
-            "type": "partials",
-            "basename": "test.jsx",
-            "filename": "test",
-            "dirname": "test/fixtures/jsx/partials",
-            "destDir": "test/expected/jsx/",
-            "destSubDir": "",
-            "destFile": "test.html",
-            "serverFile": "test",
-            "raw": "import React from 'react';\nimport TestBrick from './bricks/test-brick';\n\nfunction Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<TestBrick />\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n\nexport default Test;\n",
-            "parsed": {
-                "content": "import React from 'react';\nimport TestBrick from './bricks/test-brick';\n\nfunction Test({ text, src }) {\n\treturn (\n\t\t<div className=\"c-test\">\n\t\t\t<TestBrick />\n\t\t\t<h3>test component headline</h3>\n\t\t\t<img\n\t\t\t\twidth={'380px'}\n\t\t\t\tsrc={src} alt=\"picture\"\n\t\t\t/>\n\t\t\t<div>\n\t\t\t\t{text}\n\t\t\t</div>\n\t\t</div>\n\t)\n};\n\nexport default Test;\n",
-                "data": {
-                    "testPartial": "test title 2",
-                    "contextData": "test",
-                    "publish": true,
-                    "sitemap": "test"
-                },
                 "isEmpty": false,
                 "excerpt": ""
             }
@@ -224,20 +217,19 @@
                 "content": "import React from 'react';\n\nconst headerStyles = {\n    borderBottom: '1px solid #ccc',\n    marginBottom: '2rem',\n    paddingBottom: '1rem'\n};\nconst stageStyles = {\n    backgroundColor: 'f3f3f3',\n    height: '250px',\n    margin: '1rem 0',\n    padding: '1rem'\n}\nconst footerStyles = {\n    borderTop: '1px solid #ccc',\n    marginTop: '2rem',\n    paddingTop: '.5rem'\n};\n\nexport default function LytDefault(cmp) {\n    return (props) => {\n        return (\n            <html lang=\"en\">\n            <head>\n                <meta charSet=\"UTF-8\"/>\n                <meta name=\"viewport\"\n                      content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"/>\n                <meta httpEquiv=\"X-UA-Compatible\" content=\"ie=edge\"/>\n                <title>Layouts with Mangony and React</title>\n            </head>\n            <body>\n            <header style={headerStyles}>\n                <h1>Mangony (P)React Renderer</h1>\n            </header>\n            <section style={stageStyles}>\n                stage\n            </section>\n            <main id={'main'}>\n                {cmp(props)}\n            </main>\n            <footer style={footerStyles}><h3>footer</h3></footer>\n            </body>\n            </html>\n        )\n    }\n}\n",
                 "data": {},
                 "isEmpty": false,
-                "excerpt": "",
-                "orig": null
+                "excerpt": ""
             }
         }
     },
     "__commons": {},
-    "home.settings": {
-        "layout": "lyt-default"
-    },
     "test.settings": {
         "testPartial": "test title 2",
         "contextData": "test",
         "publish": true,
         "sitemap": "test"
+    },
+    "home.settings": {
+        "layout": "lyt-default"
     },
     "test": {
         "variations": {
