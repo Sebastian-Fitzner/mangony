@@ -1,8 +1,11 @@
 {
-    "/Users/sfitzner/projects/mangony/mangony/test/fixtures/jsx/pages": [
+    "/Users/sfitzner/projects/private/mangony/test/fixtures/jsx/pages": [
         "home.jsx"
     ],
-    "/Users/sfitzner/projects/mangony/mangony/test/fixtures/jsx/partials": [
+    "/Users/sfitzner/projects/private/mangony/test/fixtures/jsx/partials": [
         "test.jsx"
+    ],
+    "/Users/sfitzner/projects/private/mangony/test/fixtures/jsx/pages/deeply/nested": [
+        "page.jsx"
     ]
 }

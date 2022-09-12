@@ -3,7 +3,6 @@ import React, { Fragment } from 'react';
 import LytDefault from './lyt-default';
 
 export const getStaticProps = async () => {
-    console.log('get static: ');
     return Promise.resolve({
         test: 'test'
     })

@@ -1,10 +1,5 @@
 import React from 'react';
-import TestBrick from './bricks/test-brick'
-import withLayoutDocs, { getStaticProps } from "../layouts/docs";
-
-export {
-	getStaticProps
-}
+import TestBrick from './bricks/test-brick';
 
 function Test({ text, src }) {
 	return (
@@ -22,4 +17,4 @@ function Test({ text, src }) {
 	)
 };
 
-export default withLayoutDocs(Test);
+export default Test;
