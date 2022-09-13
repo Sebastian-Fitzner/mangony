@@ -1,10 +1,12 @@
 import React from 'react';
+import Test from '../../../partials/test.jsx';
 
-function Page(props) {
-  console.log(props.root);
+function Page() {
   return (
     <div className='page'>
-      Page is working ...
+      Page is working!
+
+      <Test />
     </div>
   )
 }

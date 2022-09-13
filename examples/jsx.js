@@ -57,5 +57,17 @@ const mangony = new Mangony({
 });
 mangony.render()
   .then(() => mangony.use(TemplaterPlugin, {
-    compileStaticFiles: true,
+    compileStaticFiles: false,
+  }))
+  .then(() => mangony.use(ServerPlugin, {
+    express: express(),
+    logSnippet: false,
+    bsEnabled: true,
+    injectScript: true,
+    useExt: true,
+    start: true,
+    port: 3000,
+    usePort: true,
+    useAssetsDir: false,
+    bsOptions: {},
   }));
