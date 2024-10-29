@@ -1,23 +1,20 @@
 import "mocha";
 import chai from "chai";
 import fsx from "fs-extra";
-import Handlebars from "handlebars";
 import Mangony from "../index.js";
 import templaterPlugin from "../lib/plugins/hbs-templater.js";
 import optionsFactory from "./support/options-factory.js";
 'use strict';
+
 var expect = chai.expect;
 var options = optionsFactory();
 var app;
+
 describe('mangony.templater', function () {
     beforeEach(function () {
         app = new Mangony(options);
         return app.render()
-            .then(() => app.use(templaterPlugin, {
-            helpers: [
-                'helpers/*.js'
-            ]
-        }));
+            .then(() => app.use(templaterPlugin));
     });
     describe('template engine', function () {
         it('should be handlebars', function () {
@@ -199,32 +196,6 @@ describe('mangony.templater', function () {
             }).then(() => {
                 let content = fsx.readFileSync(pageFileData.destDir + '/' + pageFileData.destFile, 'utf8');
                 expect(content).to.equal('c');
-            });
-        });
-        it('should render a markdown page with local data and handlebars', function () {
-            let pageFileData = {
-                "id": "md",
-                "assets": "./",
-                "ext": ".html",
-                "srcExt": ".md",
-                "basename": "md.md",
-                "filename": "md",
-                "dirname": "test/fixtures/pages",
-                "destDir": "test/expected/",
-                "destSubDir": "",
-                "destFile": "md.html",
-                "parsed": {
-                    "data": {
-                        "title": "md"
-                    },
-                    "content": "{{title}}"
-                }
-            };
-            return app.templater.renderOne({
-                page: pageFileData
-            }).then(() => {
-                let content = fsx.readFileSync(pageFileData.destDir + '/' + pageFileData.destFile, 'utf8');
-                expect(content).to.equal('<p>md</p>\n');
             });
         });
         it('should render multiple pages', function () {

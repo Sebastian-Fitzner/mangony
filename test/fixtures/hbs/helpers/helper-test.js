@@ -1,4 +1,4 @@
-module.exports.register = function (handlebars) {
+export const register = function (handlebars) {
 
 	console.log('register helper : ');
 	handlebars.registerHelper('name', () => {

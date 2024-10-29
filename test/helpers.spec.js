@@ -4,10 +4,13 @@ import path from "path";
 import Mangony from "../index.js";
 import Helpers from "../lib/utils/helpers.js";
 import optionsFactory from "./support/options-factory.js";
+
 'use strict';
+
 var expect = { expect: expect$0 }.expect;
 var options = optionsFactory();
 var app;
+
 describe('Helpers', function () {
     beforeEach(function () {
         app = new Mangony(options);

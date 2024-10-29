@@ -22,7 +22,6 @@
 5. For every type (data, partials, layouts, pages) Mangony adds a watcher ([chokidar](https://github.com/paulmillr/chokidar)).
 6. [HJSON](https://github.com/laktak/hjson) is available.
 7. Supports different template rendering options like [Handlebars](https://github.com/wycats/handlebars.js/) or [React](https://github.com//).
-9. [Markdown-it](https://github.com/markdown-it/markdown-it), [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) and [markdown-it-named-headers](https://github.com/leff/markdown-it-named-headers) are available.
 
 ## Installation
 
@@ -39,7 +38,7 @@ For the installation of the Grunt plugin, see [grunt-mangony](https://github.com
 Just create a new instance of Mangony: 
 
 ``` js
-const Mangony = require(`mangony`);
+import Mangony from 'mangony';
 const app = new Mangony();
 ```
 
@@ -53,8 +52,11 @@ To render files with a template engine you need to add a plugin. There are some 
 Let's go with JSX for now: 
 
 ``` js 
+import Mangony, { jsxTemplaterPlugin } from 'mangony';
+const app = new Mangony();
+
 app.render()
-   .then(() => app.use(require(`mangony`).plugins.jsxTemplaterPlugin));
+   .then(() => app.use(jsxTemplaterPlugin);
 ```
 
 When using the default options your files get compiled. But you can also integrate the development server. 
@@ -66,9 +68,8 @@ When using the default options your files get compiled. But you can also integra
 Let`s say we want to develop a new static page with the dev server in place. 
 
 ``` js
-const Mangony = require(`mangony`);
-const jsx = require(`mangony`).plugins.jsxTemplaterPlugin;
-const devServer = require(`mangony`).plugins.serverPlugin;
+import Mangony, { jsxTemplaterPlugin, serverPlugin } from 'mangony';
+
 const app = new Mangony({
     cwd: `src`,
     dest: `dist/`,
@@ -126,8 +127,8 @@ The url is the path to your page without a file extension (i.e. `/index`). If yo
 Let`s say we want to build our static page. 
 
 ``` js
-const Mangony = require(`mangony`);
-const jsx = require(`mangony`).plugins.jsxTemplaterPlugin;
+import Mangony, { jsxTemplaterPlugin } from 'mangony';
+
 const app = new Mangony({
     cwd: `src`,
     dest: `dist/`
@@ -266,7 +267,7 @@ Just enable the internal watching of file changes.
 
 ## Plugins 
 
-### Dev Server Plugin (`plugins.ServerPlugin`)
+### Dev Server Plugin (`serverPlugin`)
 
 The dev server is providing the best developer experience by triggering a reload when a file has changed and supporting the rendering of only requested files. 
 That means, even when your project is growing in terms of pages and components it almost does not matter because only changed files get recompiled and rendered. 
@@ -335,7 +336,7 @@ Set to `false` if you have already a port provided to express.
 
 Set to `false` if you have already an asset directory provided to express.
 
-### JSX Templater Plugin (`plugins.jsxTemplaterPlugin`)
+### JSX Templater Plugin (`jsxTemplaterPlugin`)
 
 With this plugin we can render React, Preact or similar JSX capable projects. Mangony is using a temporary directory to compile your files with ESBuild. 
 That means `.tsx` and `.jsx` files are both supported out-of-the-box. 
@@ -348,7 +349,7 @@ That means `.tsx` and `.jsx` files are both supported out-of-the-box.
 
 Enable/disable the compiling of your files.
 
-### Handlebars Templater Plugin (`plugins.hbsTemplaterPlugin`)
+### Handlebars Templater Plugin (`hbsTemplaterPlugin`)
 
 #### allow.YFMLayout (`Boolean`)
 
@@ -368,12 +369,88 @@ Flag to add a specific data context for your page by referencing a data file id 
 
 Enable/disable the compiling of your files.
 
-#### helpers
+#### handlebarsInstance
 
-- default: `["helpers/*.js"]`
-- relative to `cwd`
+- default: Handlebars
 
-Register custom handlebars helpers by providing the path. Globbing is possible.
+Add the possibility to pass your own instance with custom helpers, like: 
+
+```js
+import Mangony, { hbsTemplaterPlugin, serverPlugin } from 'mangony';
+import mgyHelperWrapWith from 'mangony-hbs-helper-wrap-with';
+import mgyHelpers from 'mangony-hbs-helpers';
+import layouts from 'handlebars-layouts';
+import handlebarsHelpers from 'handlebars-helpers';
+import handlebars from 'handlebars';
+import * as helpers from './helpers/hbs-helpers.js';
+
+const engine = handlebars.create();
+
+handlebarsHelpers({ handlebars: engine });
+layouts.register(engine);
+mgyHelpers.register(engine);
+mgyHelperWrapWith.register(engine);
+helpers.register(engine);
+
+const mangony = new Mangony({
+    cwd: 'src',
+    dest: 'dist',
+    exportData: false,
+    evtNamespace: 'Mangony',
+    ext: '.html',
+    flatten: false,
+    collections: [
+        'sitemap',
+    ],
+    types: {
+        data: {
+            dir: 'templates',
+            files: [
+                '**/*.json',
+                '**/*.hjson',
+            ],
+        },
+        pages: {
+            dir: 'templates/pages',
+            files: [
+                '**/*.hbs',
+                '**/*.md',
+            ],
+        },
+        partials: {
+            dir: 'templates/partials',
+            files: [
+                '**/*.hbs',
+            ],
+        },
+        layouts: {
+            dir: 'templates/layouts',
+            files: [
+                '**/*.hbs',
+            ],
+        },
+    },
+    watch: devMode
+});
+
+mangony.render()
+    .then(() => {
+        return mangony.use(hbsTemplaterPlugin, {
+            handlebarsInstance: engine,
+            allow: {
+                YFMContextData: true,
+                YFMLayout: true,
+            },
+            compileStaticFiles: false,
+        });
+    })
+  .then((templater) => {
+    templater.then(() => {
+      return mangony.templater.renderPages();
+    });
+  })
+
+```
 
 ## Why Mangony?
 

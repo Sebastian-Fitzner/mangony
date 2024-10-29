@@ -2,10 +2,13 @@ import "mocha";
 import { expect as expect$0 } from "chai";
 import Mangony from "../index.js";
 import optionsFactory from "./support/options-factory.js";
+
 'use strict';
+
 var expect = { expect: expect$0 }.expect;
 var options = optionsFactory();
 var app;
+
 describe('mangony.data', function () {
     beforeEach(function () {
         app = new Mangony(options);

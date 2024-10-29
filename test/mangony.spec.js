@@ -4,10 +4,13 @@ import Mangony from "../index.js";
 import Data from "../lib/modules/data.js";
 import loader from "../lib/utils/loader.js";
 import optionsFactory from "./support/options-factory.js";
+
 'use strict';
+
 var expect = { expect: expect$0 }.expect;
 var options = optionsFactory();
 var app;
+
 describe('Mangony', function () {
     describe('defaults', function () {
         beforeEach(function () {

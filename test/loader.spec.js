@@ -3,10 +3,13 @@ import chai from "chai";
 import Mangony from "../index.js";
 import optionsFactory from "./support/options-factory.js";
 import loader from "../lib/utils/loader.js";
+
 'use strict';
+
 var expect = chai.expect;
 var options = optionsFactory();
 var app;
+
 describe('mangony.loader', function () {
     beforeEach(function () {
         app = new Mangony(options);
