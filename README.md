@@ -52,7 +52,9 @@ To render files with a template engine you need to add a plugin. There are some 
 Let's go with JSX for now: 
 
 ``` js 
-import Mangony, { jsxTemplaterPlugin } from 'mangony';
+import Mangony from 'mangony';
+import jsxTemplaterPlugin from 'mangony/plugins/jsx-templater.js';
+
 const app = new Mangony();
 
 app.render()
@@ -68,7 +70,9 @@ When using the default options your files get compiled. But you can also integra
 Let`s say we want to develop a new static page with the dev server in place. 
 
 ``` js
-import Mangony, { jsxTemplaterPlugin, serverPlugin } from 'mangony';
+import Mangony from 'mangony';
+import jsxTemplaterPlugin from 'mangony/plugins/jsx-templater.js';
+import serverPlugin from 'mangony/plugins/server.js';
 
 const app = new Mangony({
     cwd: `src`,
@@ -127,7 +131,8 @@ The url is the path to your page without a file extension (i.e. `/index`). If yo
 Let`s say we want to build our static page. 
 
 ``` js
-import Mangony, { jsxTemplaterPlugin } from 'mangony';
+import Mangony from 'mangony';
+import jsxTemplaterPlugin from 'mangony/plugins/jsx-templater.js';
 
 const app = new Mangony({
     cwd: `src`,
@@ -267,7 +272,7 @@ Just enable the internal watching of file changes.
 
 ## Plugins 
 
-### Dev Server Plugin (`serverPlugin`)
+### Dev Server Plugin (`mangony/plugins/server.js`)
 
 The dev server is providing the best developer experience by triggering a reload when a file has changed and supporting the rendering of only requested files. 
 That means, even when your project is growing in terms of pages and components it almost does not matter because only changed files get recompiled and rendered. 
@@ -336,7 +341,7 @@ Set to `false` if you have already a port provided to express.
 
 Set to `false` if you have already an asset directory provided to express.
 
-### JSX Templater Plugin (`jsxTemplaterPlugin`)
+### JSX Templater Plugin (`mangony/plugins/jsx-templater.js`)
 
 With this plugin we can render React, Preact or similar JSX capable projects. Mangony is using a temporary directory to compile your files with ESBuild. 
 That means `.tsx` and `.jsx` files are both supported out-of-the-box. 
@@ -349,7 +354,7 @@ That means `.tsx` and `.jsx` files are both supported out-of-the-box.
 
 Enable/disable the compiling of your files.
 
-### Handlebars Templater Plugin (`hbsTemplaterPlugin`)
+### Handlebars Templater Plugin (`mangony/plugins/jsx-templater.js`)
 
 #### allow.YFMLayout (`Boolean`)
 
@@ -376,7 +381,9 @@ Enable/disable the compiling of your files.
 Add the possibility to pass your own instance with custom helpers, like: 
 
 ```js
-import Mangony, { hbsTemplaterPlugin, serverPlugin } from 'mangony';
+import Mangony from 'mangony';
+import hbsTemplaterPlugin from 'mangony/plugins/hbs-templater.js';
+import serverPlugin from 'mangony/plugins/server.js';
 import mgyHelperWrapWith from 'mangony-hbs-helper-wrap-with';
 import mgyHelpers from 'mangony-hbs-helpers';
 import layouts from 'handlebars-layouts';
@@ -458,7 +465,7 @@ mangony.render()
 
 In general I love static site generators. Simply deploy the output and you`re done - great. 
 
-But there is one major problem. When developing every change leads to the compiling of all pages. In large projects this is very time consuming.
+But there is one major problem. When developing, every change leads to the compiling of all pages. In large projects this is very time consuming.
 
 So why not just combine a server for development purpose with a static site generator?
 

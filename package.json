@@ -1,10 +1,43 @@
 {
   "name": "mangony",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Yet another static site generator in NodeJS focussed on being fast and simple. Mangony fulfills just one task: It takes templates (like handlebars or jsx) and compiles them to an output directory.",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/mangony.d.ts",
+        "default": "./index.js"
+      },
+      "require": "./index.js"
+    },
+    "./plugins/hbs-templater.js": {
+      "import": {
+        "default": "./lib/plugins/hbs-templater.js"
+      },
+      "require": "./lib/plugins/hbs-templater.js"
+    },
+    "./plugins/jsx-templater.js": {
+      "import": {
+        "default": "./lib/plugins/jsx-templater.js"
+      },
+      "require": "./lib/plugins/jsx-templater.js"
+    },
+    "./plugins/ftl-templater.js": {
+      "import": {
+        "default": "./lib/plugins/ftl-templater.js"
+      },
+      "require": "./lib/plugins/ftl-templater.js"
+    },
+    "./plugins/server.js": {
+      "import": {
+        "default": "./lib/plugins/server.js"
+      },
+      "require": "./lib/plugins/server.js"
+    }
+  },
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
